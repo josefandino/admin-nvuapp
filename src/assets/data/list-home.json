@@ -1,0 +1,12 @@
+[
+  {
+    "path": "/register",
+    "name": "Registrarme",
+    "icon": "arrow-redo-outline"
+  },
+  {
+    "path": "/login",
+    "name": "Ingresar",
+    "icon": "arrow-redo-outline"
+  }
+]

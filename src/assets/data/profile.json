@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Rosa",
+    "lastname": "Pira Gonzáles",
+    "dni": "08547256",
+    "phone": "325892647",
+    "email": "miemail@gmail.com",
+    "country": "México",
+    "city": "Cancún",
+    "addres": "Calle 35 N, 52-58",
+    "avatar": "assets/img/avatar.png"
+  }
+]

@@ -1,0 +1,25 @@
+
+<ion-content class="ion-padding">
+  <div class="home">
+    <div class="logo centrar">
+      <img src="../../../assets/img/logo.png">
+    </div>
+    <br>
+
+    <ion-list *ngFor="let c of listHome">
+      <ion-item 
+        [routerLink]="c.path">
+        <ion-text color="primary">
+          <h4>{{ c.name | titlecase }}</h4>
+        </ion-text>
+        <ion-icon [name]="c.icon" slot="end" color="primary"></ion-icon>
+      </ion-item>
+    </ion-list>
+    <br>
+    <ion-button (click)="getStudents()" expand="block" fill="outline" shape="round">
+      Students
+    </ion-button>
+
+  </div>
+
+</ion-content>

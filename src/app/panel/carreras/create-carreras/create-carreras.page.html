@@ -1,0 +1,65 @@
+<app-header title="Agregar Carrera "></app-header>
+
+<ion-content class="ion-padding">
+
+  <section class="form container">
+    <ion-title class="ion-text-center" ><small>Formulario de </small> registro</ion-title>
+    <br>
+
+    <ion-item>
+      <ion-label position="floating">Nombre del curso</ion-label>
+      <ion-input [(ngModel)]="dataCarrera.nameclass" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Carrera</ion-label>
+      <ion-input [(ngModel)]="dataCarrera.teacher" type="text"></ion-input>
+    </ion-item>
+
+
+
+
+
+
+    <ion-item>
+      <ion-label position="floating">No. ciclo</ion-label>
+      <ion-input [(ngModel)]="dataCarrera.codeCarrera" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Profesor</ion-label>
+      <ion-input [(ngModel)]="dataCarrera.teacher" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Código</ion-label>
+      <ion-input [(ngModel)]="dataCarrera.authorCarrera" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Autor</ion-label>
+      <ion-input [(ngModel)]="dataCarrera.authorCarrera" type="text"></ion-input>
+    </ion-item>
+
+    <div class="textArea">
+      <ion-textarea
+          type="text" rows="6" cols="20"
+          [(ngModel)]="dataCarrera.note"
+          placeholder="Escribir la NOTA..."></ion-textarea>
+    </div>
+
+    <br>
+
+    <ion-button  color="primary" expand="block" (click)="createCourse()">
+      Agregar Carrera
+    </ion-button>
+
+    <br>
+  </section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+</ion-content>

@@ -1,0 +1,117 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons  slot="start">
+      <ion-back-button defaultHref="/login"
+              text="Atras"
+              color="warning"
+              mode="ios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Formulario de Admisión </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <section class="container">
+    <ion-item>
+      <ion-label position="floating">Nombres</ion-label>
+      <ion-input 
+              required
+              inputmode="text"
+              minlength="4"
+              [(ngModel)]="dataAdn.name" ></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Apellidos</ion-label>
+      <ion-input 
+              required="true"
+              inputmode="text"
+              minlength="4"
+              [(ngModel)]="dataAdn.lastname" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Documento de Identidad</ion-label>
+      <ion-input 
+              required
+              inputmode=""
+              minlength=""
+              [(ngModel)]="dataAdn.document" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input 
+              required
+              inputmode=""
+              minlength=""
+              [(ngModel)]="dataAdn.email" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Celular</ion-label>
+      <ion-input 
+              required
+              inputmode=""
+              minlength=""
+              [(ngModel)]="dataAdn.phone" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">País</ion-label>
+      <ion-input 
+              required
+              inputmode=""
+              minlength=""
+              [(ngModel)]="dataAdn.country" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Ciudad</ion-label>
+      <ion-input 
+              required
+              inputmode=""
+              minlength=""
+              [(ngModel)]="dataAdn.city" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Carrera</ion-label>
+      <ion-input 
+              required
+              inputmode=""
+              minlength=""
+              [(ngModel)]="dataAdn.carrera" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">¿Cómo quieres ser contactado?</ion-label>
+      <ion-input 
+              required
+              inputmode=""
+              minlength=""
+              [(ngModel)]="dataAdn.optsContactado" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">¿Qué información te interesa recibir?</ion-label>
+      <ion-input 
+              required
+              inputmode=""
+              minlength=""
+              [(ngModel)]="dataAdn.information" ></ion-input>
+    </ion-item>
+
+    <section class="politiks">
+      <ion-checkbox checked [(ngModel)]="politik"></ion-checkbox>&nbsp; He leído y acepto las <a routerLink="politicas-de-privacidad">políticas de privacidad para el tratamiento de mis datos.</a>
+    </section>
+
+    <ion-button (click)="createAdmision()" 
+            expand="block" shape="round"
+            [disabled]="!modelIsvalid">
+      Enviar información
+    </ion-button>
+
+  </section>
+</ion-content>

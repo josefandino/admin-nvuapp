@@ -1,0 +1,197 @@
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+:root{
+  --bg: #0a0f22;
+  --gris: #f3f3f3;
+  --gris1: #979797;
+}
+
+.container{width:100%;height:auto;
+  max-width:920px;
+  margin: 0 auto;}
+
+.centrar{width:100%;height:auto;
+  display:flex;align-items:center;
+  justify-content:center;}
+
+.centrarv{width:100%;height:auto;
+  display:flex;align-items:center;
+  justify-content:center;
+  flex-direction:column;}
+
+/* =========================================
+************ GRID  
+========================================= */
+.grid2{width:100%;height:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+/* ------------------------------
+	Styles Tables
+------------------------------ */
+.ctnTable{width:100%;max-width:900px;height:auto;
+  overflow:auto;white-space:nowrap;
+  padding:10px;margin:15px auto;
+  background:#f8f8f8;border-radius:4px;}
+table {border-collapse: collapse;width: 100%;
+  margin:0 auto;padding:0;
+  // background:#82E0AA;
+  white-space:nowrap;}
+td, th {border:1px solid #999;
+  padding: 6px;margin:0 auto;}
+th{text-align:center;
+  background:var(--ion-color-primary);
+  color:#f3f3f3;font-weight:400;}
+td{text-align: left;}
+tr:nth-child(even) {background-color: #ddd;}
+
+
+.addBtn{width:100%;height:auto;
+  display:flex;
+  justify-content:flex-end;
+
+  .childAddBtn{width:170px;height:auto;
+    // margin-bottom: 1rem;
+    a{text-decoration: none;
+      display:block;
+      background:var(--ion-color-secondary);
+      padding:.5rem;
+      color:#fefefe;
+      border-radius:4px 0 0 4px;
+    }
+  }
+}
+
+/* ===========   TEXTAREA   =========== */
+.textArea{width:100%;height:auto;
+  margin:1rem auto;
+  ion-textarea{width:100%;height:auto;
+    border: 1px solid #DADADA;
+    // color: var(--gris1);
+    background: #fff;
+    padding: 0 .3rem;
+    border-radius: 5px;}
+}
+
+.form{width:100%;height:auto;
+  ion-item{margin:1rem auto;
+    border:1px solid var(--gris1);
+    border-radius: 6px;
+  }
+}
+input::placeholder{
+  font-size:14px ;
+  --color:var(--gris1) !important;}
+
+
+  /* =========================================
+************ BTN
+========================================= */
+.btn{width:100%;height:auto;
+  padding: 0;margin: 0;
+  li{list-style: none;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:.5rem}
+    .childBtn{width:100%;height:auto;
+      display:grid;
+      grid-template-columns:1fr 30px;
+      transition:all .2s ease;;
+  }
+  .icon{width:100%;height:auto;
+    display:flex;align-items:center;
+    justify-content:end;
+      ion-icon{font-size:1.5rem;
+        color:var(--ion-color-primary);
+      }
+  }
+  a{text-decoration:none;
+    display: block;
+    display:flex;align-items:center;
+    justify-content:center;
+    padding:.2rem;
+    border:1px solid var(--gris1);
+    border-radius:5px;
+    background:var(--gris);
+    color:var(--ion-color-primary);
+    text-align: center;
+  }
+}
+
+.btnPage{width:100%;height:auto;  
+  ul{padding: 0;margin: 0;}
+  li{list-style: none;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:.5rem;
+  }
+  a{text-decoration:none;
+    display: block;
+    display:flex;align-items:center;
+    justify-content:center;
+    padding:.5rem;
+    border:1px solid var(--gris1);
+    border-radius:5px;
+    background:var(--ion-color-primary);
+    color:#f3f3f3;
+    text-align: center;
+    cursor: pointer;
+    transition:all .2s ease;;
+    &:active{transform:scale(.60) translateY(3px);
+      box-shadow:0 0 8px 3px rgba(0,0,0,.5) inset;}
+  }
+}
+.childBtnPage{width:100%;height:auto;
+
+}
+
+
+.navegation{width:100%;height:auto;
+  max-width: 720px;
+  padding:5px 1rem;margin:0 auto;;
+  display:flex;
+  overflow-x: scroll;
+  background:var(--ion-color-secondary);
+  .childNavegation{width:100%;
+    white-space:nowrap;
+    padding:0 1px;
+    margin-bottom:.6rem;
+    a{width: 100%;
+      display: block;
+      padding:.5rem;
+      text-decoration:none;
+      border:1px solid var(--gris1);
+      color: #f3f3f3;
+      cursor:pointer;
+    }
+  }
+}
+// .ctnTable{width:100%;max-width:900px;height:auto;
+//   overflow:auto;white-space:nowrap;
+//   padding:10px;margin:15px auto;
+//   background:#f8f8f8;border-radius:4px;}
+// table {border-collapse: collapse;width: 100%;
+//   margin:0 auto;padding:0;
+//   // background:#82E0AA;
+//   white-space:nowrap;}
+// td, th {border:1px solid #999;
+//   padding: 6px;margin:0 auto;}
+// th{text-align:center;
+//   background:var(--ion-color-primary);
+//   color:#f3f3f3;font-weight:400;}
+// td{text-align: left;}
+// tr:nth-child(even) {background-color: #ddd;}

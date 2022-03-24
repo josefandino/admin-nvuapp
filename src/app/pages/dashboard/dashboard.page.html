@@ -1,0 +1,22 @@
+<app-header-panel></app-header-panel>
+
+
+<ion-content class="ion-padding">
+
+  <section class="container">
+    <h3 >Sistema administrativo <b>NVU</b></h3>
+
+    <ul class="btn">
+      <li>
+        <a class="childBtn" [routerLink]="n.redirectTo" *ngFor="let n of menuVAL">
+          {{ n.name }}
+          <div class="icon"><ion-icon [name]="n.icon"></ion-icon></div>
+        </a>
+      </li>
+    </ul>
+
+  </section>
+
+
+
+</ion-content>

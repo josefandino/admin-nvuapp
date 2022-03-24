@@ -1,0 +1,48 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons  slot="start">
+      <ion-back-button defaultHref="/login"
+              text="Atras"
+              color="warning"
+              mode="ios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Admisión </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+<section class="container">
+  <ion-segment value="admitido" (ionChange)="this.showAdmitidos = !this.showAdmitidos">
+    <ion-segment-button value="admitido">
+      <ion-label>Admitidos</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="noadmitido">
+      <ion-label>No admintidos</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-card *ngFor="let s of students">
+    <div *ngIf="showAdmitidos===s.admitido">
+      <ion-card-header>
+        <ion-card-title>{{s.name}} {{s.lastname}}</ion-card-title>
+        <ion-card-subtitle>{{s.email}}</ion-card-subtitle>
+        <ion-card-subtitle>{{s.carrera}}</ion-card-subtitle>
+        <!-- <ion-card-subtitle>{{s.admitido}}</ion-card-subtitle> -->
+      </ion-card-header>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="9">
+            Admitir
+          </ion-col>
+          <ion-col size="2">
+            <ion-toggle [checked]="s.admitido" (click)="editStudent(s.id, !s.admitido)"></ion-toggle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-card>
+</section>
+
+</ion-content>

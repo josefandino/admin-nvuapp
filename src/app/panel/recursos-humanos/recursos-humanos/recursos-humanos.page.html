@@ -1,0 +1,18 @@
+<app-header title="Recursos humanos"></app-header>
+
+<ion-content class="ion-padding">
+
+  <section class="container">
+
+    <ul class="btn">
+      <li>
+        <a [routerLink]="n.redirectTo" *ngFor="let n of menuVAL">
+          <ion-icon color="primary" slot="start" [name]="n.icon"></ion-icon>
+          {{ n.name }}
+        </a>
+      </li>
+    </ul>
+
+  </section>
+
+</ion-content>

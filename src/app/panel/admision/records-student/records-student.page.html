@@ -1,0 +1,21 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons  slot="start">
+      <ion-back-button defaultHref="/panel-admision"
+              text="Atras"
+              color="warning"
+              mode="ios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Records del estudiante </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <section class="navegation">
+    <div class="childNavegation" *ngFor="let r of records">
+      <a [routerLink]="r.redirecTo">{{ r.name }}</a>
+    </div>
+  </section>
+
+</ion-content>

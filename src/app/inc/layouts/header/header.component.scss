@@ -1,0 +1,10 @@
+.back{width: 60px;height: 50px;
+  display:flex;align-items:center;
+  justify-content:center;
+  overflow: hidden;
+  ion-icon{font-size: 35px;}
+  transition:all .2s ease;;
+  // &:hover{transform: scale(1.2) translateY(-3px);
+  //   color:#b6b7d8;}
+  &:active{justify-content:start}
+}

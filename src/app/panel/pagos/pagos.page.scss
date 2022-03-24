@@ -1,0 +1,11 @@
+.pagos{width:100%;height:auto;
+  border:1px solid var(--gris1);
+  border-radius:5px;
+  padding:.5rem;
+  margin: 1rem auto;
+}
+
+.childPagos{width:100%;height:auto;
+  display:flex;
+  justify-content: space-around;
+}

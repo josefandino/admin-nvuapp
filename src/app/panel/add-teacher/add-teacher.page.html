@@ -1,0 +1,111 @@
+<app-header title="Agregar Profesor"></app-header>
+<ion-content class="ion-padding">
+
+  <div class="form container">
+    <ion-title class="ion-text-center" ><small>Formulario de </small> registro</ion-title>
+    <br>
+
+    <ion-item>
+      <ion-label position="floating">Nombres</ion-label>
+      <ion-input [(ngModel)]="dataTeacher.name" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Apellidos</ion-label>
+      <ion-input [(ngModel)]="dataTeacher.lastname" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Documento</ion-label>
+      <ion-input [(ngModel)]="dataTeacher.document" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Fecha de Nacimiento</ion-label>
+      <ion-input
+          placeholder="2003-12-31"
+          [(ngModel)]="dataTeacher.age"
+          type="date"
+          max="2003-12-31"
+          min="1940-12-31"
+          ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">País de residencia</ion-label>
+      <ion-input [(ngModel)]="dataTeacher.countryOfResidence" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Ciudad de residencia</ion-label>
+      <ion-input [(ngModel)]="dataTeacher.homeCity" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Dirección</ion-label>
+      <ion-input [(ngModel)]="dataTeacher.address" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Teléfono</ion-label>
+      <ion-input type="phone" [(ngModel)]="dataTeacher.phone" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Designación</ion-label>
+      <ion-input [(ngModel)]="dataTeacher.designacion" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Fecha de ingreso</ion-label>
+      <ion-input
+          placeholder="2003-12-31"
+          [(ngModel)]="dataTeacher.dateEntry"
+          type="date"
+          max="2026-12-31"
+          min="2022-03-01"
+          ></ion-input>
+    </ion-item>
+
+    <!-- <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input [(ngModel)]="dataTeacher.usurname" type="text"></ion-input>
+    </ion-item> -->
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="dataTeacher.email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input [(ngModel)]="dataTeacher.password" type="text"></ion-input>
+    </ion-item>
+
+    <!-- <ion-item>
+      <ion-label position="floating">Foto</ion-label>
+      <ion-input [(ngModel)]="dataTeacher.avatar" type="text"></ion-input>
+    </ion-item> -->
+
+    <div class="textArea">
+      <ion-textarea
+          type="text" rows="6" cols="20"
+          [(ngModel)]="dataTeacher.note"
+          placeholder="Escribir la NOTA..."></ion-textarea>
+    </div>
+
+    <br>
+
+    <ion-button  color="primary" expand="block" (click)="createTeacher()">
+      Agregar Docente
+    </ion-button>
+
+    <br>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+</ion-content>

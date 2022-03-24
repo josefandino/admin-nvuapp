@@ -1,0 +1,13 @@
+ion-content{width:100%;height:auto;
+  --background:var(--bg);
+}
+ion-list{margin-top: 2px;
+  --background:var(--bg);
+  border-radius: 4px;}
+.home{width:100%;height:auto;
+  max-width: 550px;
+  margin: 0 auto;
+  min-height: 90vh;
+  
+  img{width: 150px;}
+}

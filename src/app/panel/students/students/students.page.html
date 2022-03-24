@@ -1,0 +1,48 @@
+<app-header title="Alumnos"></app-header>
+
+<ion-content class="ion-padding">
+
+    <section class="container">
+        <div class="addBtn">
+            <div class="childAddBtn">
+              <a routerLink="/create-students" color="success">
+                <ion-icon slot="start" name="person-add-outline"></ion-icon>
+                Agregar Estudiante
+              </a>
+            </div>
+        </div>
+        
+
+        <div class="ctnTable">
+            <table>
+                <tr>
+                  <th>Nombres</th>
+                  <th>Apellidos</th>
+                  <th>Documento</th>
+                  <th>Email</th>
+                  <th>Teléfono</th>
+                  <th>País</th>
+                  <th>Ciudad</th>
+                  <th>Carrera</th>
+                  <th>optsContactado</th>
+                  <th>Informacion</th>
+                </tr>
+                <tr *ngFor="let s of students">
+                  <td>{{ s.name | json }}</td>
+                  <td>{{ s.lastname | json }}</td>
+                  <td>{{ s.document | json }}</td>
+                  <td>{{ s.email | json }}</td>
+                  <td>{{ s.phone | json }}</td>
+                  <td>{{ s.country | json }}</td>
+                  <td>{{ s.city | json }}</td>
+                  <td>{{ s.carrera | json }}</td>
+                  <td>{{ s.optsContactado | json }}</td>
+                  <td>{{ s.information | json }}</td>
+                  <td>
+                    <ion-icon color="danger" style="zoom:1.5" name="trash-outline" (click)="deleteStudent(s.id)"></ion-icon>
+                  </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+</ion-content>

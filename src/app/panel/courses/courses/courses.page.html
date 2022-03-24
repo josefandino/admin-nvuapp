@@ -1,0 +1,61 @@
+<app-header title="Cursos NVU"></app-header>
+
+<ion-content class="ion-padding">
+
+  <section class="container">
+
+  <div class="addBtn">
+    <div class="childAddBtn">
+      <a routerLink="/create-courses" color="success">
+        <ion-icon slot="start" name="person-add-outline"></ion-icon>
+        Agregar Curso
+      </a>
+    </div>
+  </div>
+
+    <div class="ctnTable">
+      <table>
+          <tr>
+            <th>Nombre del curso</th>
+            <th>Carrera</th>
+            <th>No. ciclo</th>
+            <th>Profesor</th>
+          </tr>
+
+          <tr *ngFor="let t of coursesList">
+            <td>{{ t.name | json }}</td>
+            <td>{{ t.carrera | json }}</td>
+            <td>{{ t.teacher | json }}</td>
+            <td>
+              <!-- <ion-icon color="tertiary" style="zoom:1.5" name="create-outline" (click)="courseById(t.id)"></ion-icon> -->
+              <ion-icon color="danger" style="zoom:1.5" name="trash-outline" (click)="deleteCourse(t.id)"></ion-icon>
+            </td>
+          </tr>
+      </table>
+  </div>
+
+
+  <!-- <div class="courses">
+    <div class="childCourses">
+      <p> Nombres: <b>Pedro</b> </p>
+      <p>Apellidos: <b>Morales</b></p>
+      <p>Documento <b>1045982</b> </p>
+      <p>Fecha de nacimiento <b>30/12-1987</b></p>
+      <p>País de residencia <b>Colombia</b> </p>
+      <p> Ciudad de residencia <b>Bogotá</b> </p>
+      <p>email: <b>courseFlavio@gmail.com</b> </p>
+      <p> Teléfono <b>+1 265 485 3215</b> </p>
+      <p>Contraseña: <b>123456</b> </p>
+    </div>
+
+  </div> -->
+
+</section>
+
+
+<br>
+<br>
+<br>
+<br>
+
+</ion-content>

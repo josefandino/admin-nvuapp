@@ -1,0 +1,56 @@
+  <app-header title="Notas"></app-header>
+
+<ion-content class="ion-padding">
+  <section class="container">
+    <main class="notas">
+      <ion-item>
+        <ion-label position=floating>Asignatura</ion-label>
+        <ion-input
+              inputmode="email"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position=floating>Clave</ion-label>
+        <ion-input
+              inputmode="clave"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position=floating>CR</ion-label>
+        <ion-input
+              inputmode="cr"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position=floating>Evaluación 1</ion-label>
+        <ion-input
+              inputmode="evaluacionUno"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position=floating>Evaluación 2</ion-label>
+        <ion-input
+              inputmode="evaluacionDos"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position=floating>Prácticas</ion-label>
+        <ion-input
+              inputmode="practicas"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position=floating>Final</ion-label>
+        <ion-input
+              inputmode="final"></ion-input>
+      </ion-item>
+
+      <br>
+      <ion-button (click)="crateNote()" expand="block" fill="outline" shape="round">
+        Guardar Notas
+      </ion-button>
+      <br>
+    </main>
+  </section>
+
+</ion-content>

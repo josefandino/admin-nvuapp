@@ -1,0 +1,75 @@
+<app-header title="Carrera académicas NVU"></app-header>
+<ion-content class="ion-padding">
+
+  <style>
+
+  </style>
+
+  <section class="container">
+
+    <div class="addBtn">
+      <div class="childAddBtn">
+        <a routerLink="/create-carrera" color="success">
+          <ion-icon slot="start" name="person-add-outline"></ion-icon>
+          Agregar Carrera
+        </a>
+      </div>
+    </div>
+
+      <div class="ctnTable">
+        <table>
+            <tr>
+              <th>Nombre </th>
+              <th>Profesor</th>
+              <th>Documento</th>
+              <th>Código</th>
+              <th>Autor</th>
+              <th>ACC</th>
+            </tr>
+            <!-- <tr *ngFor="let t of teachersList">
+              <td>{{ t.name | json }}</td>
+              <td>{{ t.lastname | json }}</td>
+              <td>{{ t.document | json }}</td>
+              <td>{{ t.age | json }}</td>
+              <td>{{ t.countryOfResidence | json }}</td>
+              <td>{{ t.homeCity | json }}</td>
+              <td>{{ t.addres | json }}</td>
+              <td>{{ t.phone | json }}</td>
+              <td>{{ t.designacion | json }}</td>
+              <td>{{ t.dateEntry | json }}</td>
+              <td>{{ t.email | json }}</td>
+              <td>{{ t.password | json }}</td>
+              <td>{{ t.note | json }}</td>
+              <td>
+                <ion-icon color="tertiary" style="zoom:1.5" name="create-outline" (click)="teacherById(t.id)"></ion-icon>
+                <ion-icon color="danger" style="zoom:1.5" name="trash-outline" (click)="deleteTeacher(t.id)"></ion-icon>
+              </td>
+            </tr> -->
+        </table>
+    </div>
+
+
+    <!-- <div class="teachers">
+      <div class="childTeachers">
+        <p> Nombres: <b>Pedro</b> </p>
+        <p>Apellidos: <b>Morales</b></p>
+        <p>Documento <b>1045982</b> </p>
+        <p>Fecha de nacimiento <b>30/12-1987</b></p>
+        <p>País de residencia <b>Colombia</b> </p>
+        <p> Ciudad de residencia <b>Bogotá</b> </p>
+        <p>email: <b>teacherFlavio@gmail.com</b> </p>
+        <p> Teléfono <b>+1 265 485 3215</b> </p>
+        <p>Contraseña: <b>123456</b> </p>
+      </div>
+
+    </div> -->
+
+  </section>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+</ion-content>
