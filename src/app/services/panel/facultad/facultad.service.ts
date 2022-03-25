@@ -39,5 +39,4 @@ export class FacultadService {
       return await this.facultadFireSvc.collection(collection).doc(id).delete();
     } catch (err) { alert('ERROR en: ' + JSON.stringify(err)); }
   }
-
 }

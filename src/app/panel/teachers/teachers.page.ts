@@ -19,7 +19,6 @@ import { TeacherI } from 'src/app/models/teachers';
 export class TeachersPage implements OnInit {
 
   dataTeacher: TeacherI;
-
   teachersList = [];
   id: any;
 
@@ -29,9 +28,7 @@ export class TeachersPage implements OnInit {
     private navCtrl: NavController,
   ) { }
 
-  ngOnInit() {
-    this.getAllTeachers();
-  }
+  ngOnInit() { this.getAllTeachers(); }
 
   createTeacher() {
     this.teachersFireSvc.create('teachers', this.dataTeacher)
@@ -82,6 +79,4 @@ export class TeachersPage implements OnInit {
       alert('Se elimino con éxito');
     }).catch((err) => alert('Error al ELIMINAR: ' + JSON.stringify(err)));
   }
-
-
 }
