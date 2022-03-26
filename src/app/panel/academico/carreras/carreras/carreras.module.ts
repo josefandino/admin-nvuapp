@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { CarrerasPageRoutingModule } from './carreras-routing.module';
-import { LayoutsModule } from './../../../inc/layouts/layouts.module';
+import { LayoutsModule } from '../../../../inc/layouts/layouts.module';
 
 import { CarrerasPage } from './carreras.page';
 

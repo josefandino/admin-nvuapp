@@ -1,7 +1,7 @@
 import { NavController } from '@ionic/angular';
 
-import { CoursesService } from './../../../services/panel/courses/courses.service';
-import { InteractionService } from './../../../services/interaction.service';
+import { CoursesService } from '../../../../services/panel/courses/courses.service';
+import { InteractionService } from '../../../../services/interaction.service';
 
 import { CarrerasI } from 'src/app/models/panel/carreras';
 

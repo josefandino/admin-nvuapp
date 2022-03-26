@@ -9,9 +9,9 @@ const routes: Routes = [
   { path: 'courses', loadChildren: () => import('./panel/courses/courses/courses.module').then( m => m.CoursesPageModule) },
   { path: 'create-courses', loadChildren: () => import('./panel/courses/create-courses/create-courses.module').then( m => m.CreateCoursesPageModule) },
   { path: 'edit-courses', loadChildren: () => import('./panel/courses/edit-courses/edit-courses.module').then( m => m.EditCoursesPageModule) },
-  { path: 'carreras', loadChildren: () => import('./panel/carreras/carreras/carreras.module').then( m => m.CarrerasPageModule) },
-  { path: 'create-carrera', loadChildren: () => import('./panel/carreras/create-carreras/create-carreras.module').then( m => m.CreateCarrerasPageModule) },
-  { path: 'edit-carreras', loadChildren: () => import('./panel/carreras/edit-carreras/edit-carreras.module').then( m => m.EditCarrerasPageModule) },
+  { path: 'carreras', loadChildren: () => import('./panel/academico/carreras/carreras/carreras.module').then( m => m.CarrerasPageModule) },
+  { path: 'create-carrera', loadChildren: () => import('./panel/academico/carreras/create-carreras/create-carreras.module').then( m => m.CreateCarrerasPageModule) },
+  { path: 'edit-carreras', loadChildren: () => import('./panel/academico/carreras/edit-carreras/edit-carreras.module').then( m => m.EditCarrerasPageModule) },
   { path: 'admision', loadChildren: () => import('./pages/admision/admision.module').then( m => m.AdmisionPageModule) },
   { path: 'pagos', loadChildren: () => import('./panel/pagos/pagos.module').then( m => m.PagosPageModule) },
   { path: 'herramientas', loadChildren: () => import('./panel/herramientas/herramientas.module').then( m => m.HerramientasPageModule) },
@@ -67,7 +67,19 @@ const routes: Routes = [
   { path: 'gestion-cumplimiento-polizas-create', loadChildren: () => import('./panel/gestion-cumplimiento-polizas/gestion-cumplimiento-polizas-create/gestion-cumplimiento-polizas-create.module').then( m => m.GestionCumplimientoPolizasCreatePageModule) },
   { path: 'finanzas-contabilidad', loadChildren: () => import('./panel/finanzas/finanzas-contabilidad/finanzas-contabilidad.module').then( m => m.FinanzasContabilidadPageModule) },
 
-  { path: '**', redirectTo: '/dashboard', pathMatch: 'full'  },
+  { path: '**', redirectTo: '/dashboard', pathMatch: 'full'  },  {
+    path: 'asignatura',
+    loadChildren: () => import('./panel/academico/asignaturas/asignatura/asignatura.module').then( m => m.AsignaturaPageModule)
+  },
+  {
+    path: 'create-asignatura',
+    loadChildren: () => import('./panel/academico/asignaturas/create-asignatura/create-asignatura.module').then( m => m.CreateAsignaturaPageModule)
+  },
+  {
+    path: 'edit-asignatura',
+    loadChildren: () => import('./panel/academico/asignaturas/edit-asignatura/edit-asignatura.module').then( m => m.EditAsignaturaPageModule)
+  },
+
 
 ];
 
