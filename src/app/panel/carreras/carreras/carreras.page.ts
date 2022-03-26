@@ -1,4 +1,10 @@
+/* eslint-disable @typescript-eslint/dot-notation */
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { CarrerasI } from 'src/app/models/panel/carreras';
+import { InteractionService } from 'src/app/services/interaction.service';
+import { CarrerasService } from 'src/app/services/panel/carreras/carreras.service';
+
 
 @Component({
   selector: 'app-carreras',
@@ -7,9 +13,58 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarrerasPage implements OnInit {
 
-  constructor() { }
+  dataCarrera: CarrerasI;
+  carrerasList = [];
+  id: any;
+  deleted = false;
+
+  constructor(
+    private carreraFire: CarrerasService,
+    private interactionSvc: InteractionService,
+    private navCtrl: NavController
+  ) { this.getAllCarreras(); }
 
   ngOnInit() {
   }
 
+  backButton() {
+    this.navCtrl.navigateBack('/dashboard');
+  }
+
+  getAllCarreras() {
+    this.carreraFire.getCarreras('carreras').then(fireResponse => {
+      fireResponse.subscribe(listCarrerasRef => {
+        this.interactionSvc.presentToast('Cargando...', 200, 'primary');
+        this.carrerasList = listCarrerasRef.map(carreraRef => {
+          const carrera = carreraRef.payload.doc.data();
+          carrera['id'] = carreraRef.payload.doc.id;
+          this.id = carreraRef.payload.doc.id;
+          return carrera;
+        });
+      });
+    });
+  }
+
+  carreraById() {
+    const idCarrera = this.id;
+    this.carreraFire.getByIdCarrera('carreras', idCarrera).then( resp => {
+      resp.subscribe(docRef => {
+        console.log('docRef.data++', docRef.data());
+      });
+    });
+  }
+
+  updateCarrera( dato) {
+    const idCarrera = this.id;
+    this.carreraFire.updateCarrera('carreras', idCarrera, dato).then(resp => {
+      alert('La información ha sido actualizada con éxito');
+    }).catch((err) => alert('Error al UPDATE Carrera: ' + JSON.stringify(err)));
+  }
+
+
+  deleteCarrera(id) {
+    this.carreraFire.deleteCarrera('carreras', id).then((resp) => {
+      alert('Se elimino con éxito');
+    }).catch((err) => alert('Error al ELIMINAR: ' + JSON.stringify(err)));
+  }
 }

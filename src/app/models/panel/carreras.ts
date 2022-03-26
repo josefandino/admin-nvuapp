@@ -1,8 +1,8 @@
 export interface CarrerasI {
   uid: string;
-  nameclass: string;
-  teacher: string;
-  codeCarrera: string;
+  nameClass: string;
   authorCarrera: string;
+  clasificacion: string;
   note: string;
+  dateCreated: string;
 }

@@ -18,8 +18,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() { }
 
-  backButton() {
-    this.navCtr.navigateBack('/dashboard');
-  }
+  // backButton() {
+  //   this.navCtr.navigateBack(this.redirecTo);
+  // }
 
 }

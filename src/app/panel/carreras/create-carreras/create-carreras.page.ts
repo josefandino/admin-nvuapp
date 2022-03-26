@@ -5,7 +5,7 @@ import { InteractionService } from './../../../services/interaction.service';
 
 import { CarrerasI } from 'src/app/models/panel/carreras';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 
 @Component({
   selector: 'app-create-carreras',
@@ -14,13 +14,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateCarrerasPage implements OnInit {
 
+  limit = 2000;
+  inputLimit = 100;
+
+  date = new Date().toLocaleDateString();
+  hours = new Date().toLocaleTimeString();
+
+  fecha = this.date + ' ' + this.hours;
+
   dataCarrera: CarrerasI = {
     uid: null,
-    nameclass: null,
-    teacher: null,
-    codeCarrera: null,
+    nameClass: null,
     authorCarrera: null,
+    clasificacion: null,
     note: null,
+    dateCreated: this.fecha,
   };
 
   coursesList = [];
@@ -33,6 +41,15 @@ export class CreateCarrerasPage implements OnInit {
   ) { }
 
   ngOnInit() { }
+  backButton() {
+    this.navCtrl.navigateBack('/carreras');
+  }
+
+  clasificacion(e: CustomEvent) {
+    const data = e.detail.value;
+    this.dataCarrera.clasificacion = data;
+    console.log('++', this.dataCarrera.clasificacion );
+  }
 
   createCourse() {
     this.coursesSvc.create('carreras', this.dataCarrera)
@@ -42,7 +59,7 @@ export class CreateCarrerasPage implements OnInit {
         await this.interactionSvc.presentToast('CARRERA agreado SATISFACTORIAMENTE al sistema...', 1000, 'primary');
         console.log('***** Resp ****** ', resp);
         setTimeout(() => {
-          this.navCtrl.navigateBack('/courses');
+          this.navCtrl.navigateBack('/carreras');
         }, 1000);
 
       }).catch((e) => alert(JSON.stringify(e)));

@@ -1,51 +1,80 @@
-<app-header title="Agregar Carrera "></app-header>
+<app-header title="Agregar Carrera " (click)="backButton()"></app-header>
 
 <ion-content class="ion-padding">
 
   <section class="form container">
-    <ion-title class="ion-text-center" ><small>Formulario de </small> registro</ion-title>
-    <br>
 
     <ion-item>
-      <ion-label position="floating">Nombre del curso</ion-label>
-      <ion-input [(ngModel)]="dataCarrera.nameclass" type="text"></ion-input>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input 
+          type="text"
+          [(ngModel)]="dataCarrera.nameClass" 
+          placeholder="Carrera"></ion-input>
     </ion-item>
 
-    <ion-item>
+    <!-- <ion-item>
       <ion-label position="floating">Carrera</ion-label>
-      <ion-input [(ngModel)]="dataCarrera.teacher" type="text"></ion-input>
-    </ion-item>
+      <ion-input 
+          type="text"
+          [(ngModel)]="dataCarrera.teacher" 
+          placeholder=""></ion-input>
+    </ion-item> -->
 
 
 
 
 
 
-    <ion-item>
+    <!-- <ion-item>
       <ion-label position="floating">No. ciclo</ion-label>
-      <ion-input [(ngModel)]="dataCarrera.codeCarrera" type="number"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Profesor</ion-label>
-      <ion-input [(ngModel)]="dataCarrera.teacher" type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Código</ion-label>
-      <ion-input [(ngModel)]="dataCarrera.authorCarrera" type="text"></ion-input>
-    </ion-item>
+      <ion-input 
+          type="number"
+          [(ngModel)]="dataCarrera.codeCarrera" 
+          placeholder=""></ion-input>
+    </ion-item> -->
 
     <ion-item>
       <ion-label position="floating">Autor</ion-label>
-      <ion-input [(ngModel)]="dataCarrera.authorCarrera" type="text"></ion-input>
+      <ion-input 
+          type="text"
+          [(ngModel)]="dataCarrera.authorCarrera" 
+          placeholder="Nombre del Profesor"></ion-input>
     </ion-item>
+
+    <!-- <ion-item>
+      <ion-label position="floating">Clasificación</ion-label>
+      < <ion-input 
+          type="text"
+          [(ngModel)]="dataCarrera.authorCarrera" 
+          placeholder="Código de la carrera"></ion-input> 
+    </ion-item> -->
+
+    <ion-item>
+      <ion-label position="floating">Clasificación</ion-label>
+      <ion-select mode="ios" (ionChange)="clasificacion($event)" okText="Aceptar" cancelText="Cancelar" placeholder="Seleccionar una Clasificación">
+        <ion-select-option value="phd">PH.D</ion-select-option>
+        <ion-select-option value="doctorado">Doctorado</ion-select-option>
+        <ion-select-option value="licenciatura">Licenciatura</ion-select-option>
+        <ion-select-option value="diplomado">Diplomado</ion-select-option>
+        <ion-select-option value="curso" >Curso</ion-select-option>
+        <ion-select-option value="taller">Taller</ion-select-option>
+      </ion-select>
+      <!-- [(ngModel)]="clasificacion" -->
+    </ion-item>
+
+    <!-- <ion-item>
+      <ion-label position="floating">Autor</ion-label>
+      <ion-input 
+          type="text"
+          [(ngModel)]="dataCarrera.authorCarrera" 
+          placeholder=""></ion-input>
+    </ion-item> -->
 
     <div class="textArea">
       <ion-textarea
           type="text" rows="6" cols="20"
           [(ngModel)]="dataCarrera.note"
-          placeholder="Escribir la NOTA..."></ion-textarea>
+          placeholder="Escribir una NOTA..."></ion-textarea>
     </div>
 
     <br>

@@ -7,36 +7,36 @@ import { Injectable } from '@angular/core';
 export class CarrerasService {
 
   constructor(
-    private courseFireSvc: AngularFirestore
+    private carreraFireSvc: AngularFirestore
   ) { }
 
-  async create(collection, dato) {
+  async createCarrea(collection, dato) {
     try {
-      return await this.courseFireSvc.collection(collection).add(dato);
+      return await this.carreraFireSvc.collection(collection).add(dato);
     } catch (err) { alert('ERROR en : ' + JSON.stringify(err)); }
   }
 
-  async getByIdCourse(collection, id) {
+  async getByIdCarrera(collection, id) {
     try {
-      return await this.courseFireSvc.collection(collection).doc(id).get();
+      return await this.carreraFireSvc.collection(collection).doc(id).get();
     } catch (err) { alert('ERROR en: ' + JSON.stringify(err)); }
   }
 
-  async getCourses(collection) {
+  async getCarreras(collection) {
     try {
-      return await this.courseFireSvc.collection(collection).snapshotChanges();
+      return await this.carreraFireSvc.collection(collection).snapshotChanges();
     } catch (err) { alert('ERROR en: ' + JSON.stringify(err)); }
   }
 
-  async updateCourse(collection, id, dato) {
+  async updateCarrera(collection, id, dato) {
     try {
-      return await this.courseFireSvc.collection(collection).doc(id).set(dato);
+      return await this.carreraFireSvc.collection(collection).doc(id).set(dato);
     } catch (err) { alert('ERROR en: ' + JSON.stringify(err)); }
   }
 
-  async deleteCourse(collection, id) {
+  async deleteCarrera(collection, id) {
     try {
-      return await this.courseFireSvc.collection(collection).doc(id).delete();
+      return await this.carreraFireSvc.collection(collection).doc(id).delete();
     } catch (err) { alert('ERROR en: ' + JSON.stringify(err)); }
   }
 }
