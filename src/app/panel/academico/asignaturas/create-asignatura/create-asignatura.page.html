@@ -1,9 +1,103 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>createAsignatura</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header title="Agregar Asignatura " (click)="backButton()"></app-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  <section class="form container">
+
+    <ion-item>
+      <ion-label position="floating">Carrera</ion-label>
+      <ion-select mode="ios" (ionChange)="selectedCarrera($event)" okText="Aceptar" cancelText="Cancelar" placeholder="Seleccionar una tipo">
+        <ion-select-option value="{{ c.nameClass | json }}" *ngFor="let c of carrerasList">{{ c.nameClass | json }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Tipo</ion-label>
+      <ion-select mode="ios" (ionChange)="selectedTipo($event)" okText="Aceptar" cancelText="Cancelar" placeholder="Seleccionar una tipo">
+        <ion-select-option value="opcional">Opcional</ion-select-option>
+        <ion-select-option value="obligatorio">Obligatorio</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Promedio de aprobación</ion-label>
+      <ion-input 
+          type="number"
+          [(ngModel)]="dataAsignatura.promedioAprobacion" 
+          placeholder=""></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Promedio de final</ion-label>
+      <ion-input 
+          type="number"
+          [(ngModel)]="dataAsignatura.promedioFinal" 
+          placeholder=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Nombre del la Asignatura </ion-label>
+      <ion-input 
+          type="text"
+          [(ngModel)]="dataAsignatura.nameAsignatura" 
+          placeholder=""></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Número de ciclo </ion-label>
+      <ion-input 
+          type="number"
+          [(ngModel)]="dataAsignatura.numberCiclo" 
+          placeholder=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Autor de la Asignatura </ion-label>
+      <ion-input 
+          type="text"
+          [(ngModel)]="dataAsignatura.nameAuthor" 
+          placeholder=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Docente</ion-label>
+      <ion-select 
+          mode="ios" okText="Aceptar" 
+          (ionChange)="selectedTeacher($event)"
+          cancelText="Cancelar" placeholder="Seleccionar una tipo">
+        <ion-select-option 
+              *ngFor="let t of teachersList"
+              value="{{ t.name | json }}" 
+              >{{ t.name | json }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Código de Asignatura </ion-label>
+      <ion-input 
+          type="text"
+          [(ngModel)]="dataAsignatura.codeAsignatura" 
+          placeholder=""></ion-input>
+    </ion-item>
+
+    <div class="textArea">
+      <ion-textarea
+          type="text" rows="6" cols="20"
+          [(ngModel)]="dataAsignatura.note"
+          placeholder="Escribir una NOTA..."></ion-textarea>
+    </div>
+
+    <br>
+
+    <ion-button  color="primary" expand="block" (click)="createAsignatura()">
+      Agregar Asignatura
+    </ion-button>
+
+    <br>
+  </section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
 </ion-content>

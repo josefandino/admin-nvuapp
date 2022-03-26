@@ -28,7 +28,7 @@ export class CarrerasPage implements OnInit {
   }
 
   backButton() {
-    this.navCtrl.navigateBack('/dashboard');
+    this.navCtrl.navigateBack('/academico');
   }
 
   getAllCarreras() {

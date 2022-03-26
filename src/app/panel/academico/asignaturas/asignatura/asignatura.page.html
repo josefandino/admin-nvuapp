@@ -1,9 +1,59 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>asignatura</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header title="Asignaturas NVU" (click)="backButton($event)" ></app-header>
 
 <ion-content>
+
+  <section class="container">
+    <br>
+
+  <div class="addBtn">
+    <div class="childAddBtn">
+      <a routerLink="/create-asignatura" color="success">
+        <ion-icon slot="start" name="add-outline"></ion-icon>
+        Agregar Asignatura
+      </a>
+    </div>
+  </div>
+
+    <div class="ctnTable ion-padding">
+      <table>
+          <tr>
+            <th>Carrera </th>
+            <th>Creador </th>
+            <th>Promedio</th>
+            <th>Final</th>
+            <th>Autor</th>
+            <th>Docente </th>
+            <th>Código </th>
+            <th>No. Ciclo</th>
+            <th>Tipo</th>
+            <th>Nota</th>
+            <th>Fecha Creacion</th>
+            <th>Acciones</th>
+          </tr>
+          <tr *ngFor="let t of asignaturasList">
+            <td>{{ t.nameCarrera | json }}</td>
+            <td>{{ t.nameAuthor | json }}</td>
+            <td>{{ t.promedioAprobacion | json }}</td>
+            <td>{{ t.promedioFinal | json }}</td>
+            <td>{{ t.nameAsignatura | json }}</td>
+            <td>{{ t.nameTeacher | json }}</td>
+            <td>{{ t.codeAsignatura | json }}</td>
+            <td>{{ t.numberCiclo | json }}</td>
+            <td>{{ t.tipo | json }}</td>
+            <td>{{ t.note | json }}</td>
+            <td>{{ t.dateCreated | json }}</td>
+            <td>
+              <ion-icon color="tertiary" style="zoom:1.5" name="create-outline" (click)="updateAsignatura(t.id)"></ion-icon>
+              <ion-icon color="danger" style="zoom:1.5" name="trash-outline" (click)="deleteAsignatura(t.id)"></ion-icon>
+            </td>
+          </tr>
+      </table>
+  </div>
+</section>
+
+<br>
+<br>
+<br>
+<br>
 
 </ion-content>

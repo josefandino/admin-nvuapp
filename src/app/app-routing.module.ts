@@ -66,19 +66,12 @@ const routes: Routes = [
   { path: 'comunicacion-inter-departamentos-create', loadChildren: () => import('./panel/gestion-cumplimiento-polizas/comunicacion-inter-departamentos/comunicacion-inter-departamentos-create/comunicacion-inter-departamentos-create.module').then( m => m.ComunicacionInterDepartamentosCreatePageModule) },
   { path: 'gestion-cumplimiento-polizas-create', loadChildren: () => import('./panel/gestion-cumplimiento-polizas/gestion-cumplimiento-polizas-create/gestion-cumplimiento-polizas-create.module').then( m => m.GestionCumplimientoPolizasCreatePageModule) },
   { path: 'finanzas-contabilidad', loadChildren: () => import('./panel/finanzas/finanzas-contabilidad/finanzas-contabilidad.module').then( m => m.FinanzasContabilidadPageModule) },
+  { path: 'asignatura', loadChildren: () => import('./panel/academico/asignaturas/asignatura/asignatura.module').then( m => m.AsignaturaPageModule) },
+  { path: 'create-asignatura', loadChildren: () => import('./panel/academico/asignaturas/create-asignatura/create-asignatura.module').then( m => m.CreateAsignaturaPageModule) },
+  { path: 'edit-asignatura', loadChildren: () => import('./panel/academico/asignaturas/edit-asignatura/edit-asignatura.module').then( m => m.EditAsignaturaPageModule) },
+  { path: 'academico', loadChildren: () => import('./panel/academico/academico/academico.module').then(m => m.AcademicoPageModule) },
 
-  { path: '**', redirectTo: '/dashboard', pathMatch: 'full'  },  {
-    path: 'asignatura',
-    loadChildren: () => import('./panel/academico/asignaturas/asignatura/asignatura.module').then( m => m.AsignaturaPageModule)
-  },
-  {
-    path: 'create-asignatura',
-    loadChildren: () => import('./panel/academico/asignaturas/create-asignatura/create-asignatura.module').then( m => m.CreateAsignaturaPageModule)
-  },
-  {
-    path: 'edit-asignatura',
-    loadChildren: () => import('./panel/academico/asignaturas/edit-asignatura/edit-asignatura.module').then( m => m.EditAsignaturaPageModule)
-  },
+  { path: '**', redirectTo: '/dashboard', pathMatch: 'full'  },
 
 
 ];

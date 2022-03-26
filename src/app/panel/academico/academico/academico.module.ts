@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AsignaturaPageRoutingModule } from './asignatura-routing.module';
+import { AcademicoPageRoutingModule } from './academico-routing.module';
 
-import { AsignaturaPage } from './asignatura.page';
+import { AcademicoPage } from './academico.page';
 import { LayoutsModule } from 'src/app/inc/layouts/layouts.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { LayoutsModule } from 'src/app/inc/layouts/layouts.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    AsignaturaPageRoutingModule,
+    AcademicoPageRoutingModule,
     LayoutsModule
   ],
-  declarations: [AsignaturaPage]
+  declarations: [AcademicoPage]
 })
-export class AsignaturaPageModule {}
+export class AcademicoPageModule {}

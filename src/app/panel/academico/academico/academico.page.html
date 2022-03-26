@@ -1,0 +1,18 @@
+<app-header title="Académico NVU" (click)="backButton($event)" ></app-header>
+
+<ion-content class="ion-padding">
+
+  <section class="container">
+    <div class="btnPage">
+      <ul>
+        <li>
+          <a [routerLink]="n.redirectTo" *ngFor="let n of menuVAL">
+            {{ n.name }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+
+</ion-content>

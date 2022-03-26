@@ -11,8 +11,8 @@
   },
   {
     "icon": "bookmarks-outline",
-    "name": "Facultades / Escuelas",
-    "redirectTo": "/facultad"
+    "name": "Académico",
+    "redirectTo": "/academico"
   },
   {
     "icon": "bookmarks-outline",

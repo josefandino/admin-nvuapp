@@ -10,31 +10,31 @@ export class TeachersFireService {
     private tacherFireSvc: AngularFirestore
   ) { }
 
-  async create(collection, dato) {
+  async create(collection, dato): Promise<any> {
     try {
       return await this.tacherFireSvc.collection(collection).add(dato);
     } catch (err) { alert('ERROR en : ' + JSON.stringify(err)); }
   }
 
-  async getByIdTeacher(collection, id) {
+  async getByIdTeacher(collection, id): Promise<any> {
     try {
       return await this.tacherFireSvc.collection(collection).doc(id).get();
     } catch (err) { alert('ERROR en: ' + JSON.stringify(err)); }
   }
 
-  async getTeachers(collection) {
+  async getTeachers(collection): Promise<any> {
     try {
       return await this.tacherFireSvc.collection(collection).snapshotChanges();
     } catch (err) { alert('ERROR en: ' + JSON.stringify(err)); }
   }
 
-  async updateTeacher(collection, id, dato) {
+  async updateTeacher(collection, id, dato): Promise<any> {
     try {
       return await this.tacherFireSvc.collection(collection).doc(id).set(dato);
     } catch (err) { alert('ERROR en: ' + JSON.stringify(err)); }
   }
 
-  async deleteTeacher(collection, id) {
+  async deleteTeacher(collection, id): Promise<any> {
     try {
       return await this.tacherFireSvc.collection(collection).doc(id).delete();
     } catch (err) { alert('ERROR en: ' + JSON.stringify(err)); }
