@@ -1,4 +1,48 @@
-<app-header (click)="backButton($event)" title="Crear noticias NVU" ></app-header>
-<ion-content>
+<app-header (click)="backButton($event)" title="Crear noticia NVU" ></app-header>
 
+<ion-content class="ion-padding">
+
+  <section class="container">
+
+    <section class="form container">
+
+      <ion-item>
+        <ion-label position="floating">Título</ion-label>
+        <ion-input 
+            type="text"
+            [(ngModel)]="dataNoticia.title" 
+            placeholder="Título de la noticia"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Autor</ion-label>
+        <ion-input 
+            type="text"
+            [(ngModel)]="dataNoticia.author" 
+            placeholder="Autorde la noticia"></ion-input>
+      </ion-item>
+  
+      <div class="textArea">
+        <ion-textarea
+            type="text" rows="6" cols="20"
+            [(ngModel)]="dataNoticia.description"
+            [maxlength]="limit"
+            placeholder="Escribir una NOTICIA..."></ion-textarea>
+      </div>
+  
+      <br>
+  
+      <ion-button  color="primary" expand="block" (click)="createNoticia()">
+        Agregar noticia
+      </ion-button>
+  
+      <br>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+   
+  </section>
 </ion-content>

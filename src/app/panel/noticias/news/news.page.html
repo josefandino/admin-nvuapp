@@ -1,5 +1,33 @@
 <app-header (click)="backButton($event)" title="Noticias NVU" ></app-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+
+  <section class="container">
+    <div class="addBtn">
+      <div class="childAddBtn">
+        <a routerLink="/create-news" color="success">
+          <ion-icon slot="start" name="add-outline"></ion-icon>
+          Agregar noticia
+        </a>
+      </div>
+    </div>  
+
+    <div class="news">
+      <div class="childNews" *ngFor="let n of newsList">
+        <h3 class="ion-text-center">{{ n.title | json }}</h3>
+        <p class="ion-text-center"><b>{{ n.author | json}}</b></p>
+        <p>{{ n.description | json }}</p>
+        <p>{{ n.date | json }}</p>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+  </section>
+
 
 </ion-content>

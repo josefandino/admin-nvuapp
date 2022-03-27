@@ -15,22 +15,6 @@ import { NewsFirebaseService } from 'src/app/services/panel/noticias/news-fireba
 })
 export class NewsPage implements OnInit {
 
-  limit = 300;
-
-  date = new Date().toLocaleDateString();
-  hours = new Date().toLocaleTimeString();
-
-  fecha = this.date + ' ' + this.hours;
-
-  dataNoticia: NoticiasI = {
-    uid: null,
-    title: null,
-    description: null,
-    author: null,
-    date: this.date,
-    timeCreated: this.hours,
-    dateCreated: this.fecha,
-  };
 
   newsList = [];
   id: any;
@@ -39,27 +23,12 @@ export class NewsPage implements OnInit {
     private noticiasFire: NewsFirebaseService,
     private interactionSvc: InteractionService,
     private navCtrl: NavController
-  ) { }
+  ) {
+    this.getAllNoticias();
+  }
 
   ngOnInit() { }
-
-  backButton() {
-    this.navCtrl.navigateBack('/dashboard');
-  }
-
-  createNoticia() {
-    this.noticiasFire.createNoticia('noticias', this.dataNoticia)
-      .then(async resp => {
-        await this.interactionSvc.presentLoading('Agregando NOTICIA...');
-        await this.interactionSvc.closeLoading();
-        await this.interactionSvc.presentToast('NOTICIA agreada SATISFACTORIAMENTE al sistema...', 1000, 'primary');
-        // console.log('***** Resp ****** ', resp);
-        setTimeout(() => {
-          this.navCtrl.navigateBack('/news');
-        }, 1000);
-
-      }).catch((e) => alert(JSON.stringify(e)));
-  }
+  backButton() { this.navCtrl.navigateBack('/dashboard'); }
 
   getAllNoticias() {
     this.noticiasFire.getNoticias('noticias').then(fireResponse => {

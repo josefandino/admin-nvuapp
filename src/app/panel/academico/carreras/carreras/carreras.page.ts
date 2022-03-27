@@ -27,9 +27,7 @@ export class CarrerasPage implements OnInit {
   ngOnInit() {
   }
 
-  backButton() {
-    this.navCtrl.navigateBack('/academico');
-  }
+  backButton() { this.navCtrl.navigateBack('/academico'); }
 
   getAllCarreras() {
     this.carreraFire.getCarreras('carreras').then(fireResponse => {
