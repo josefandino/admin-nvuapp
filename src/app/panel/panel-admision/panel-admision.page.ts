@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-panel-admision',
@@ -15,9 +16,14 @@ export class PanelAdmisionPage implements OnInit {
     { name: 'Revisión App', redirectTo: '/revision-app', icon: ''},
   ];
 
-  constructor() { }
+  constructor(
+    private navCtrl: NavController
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  backButton() {
+    this.navCtrl.navigateBack('/dashboard');
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-gestion-cumplimiento-polizas',
@@ -14,9 +15,14 @@ export class GestionCumplimientoPolizasPage implements OnInit {
     { name: 'Comunicación inter departamentos', redirectTo: '/comunicacion-inter-departamentos' },
   ];
 
-  constructor() { }
+  constructor(
+    private navCtrl: NavController
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  backButton() {
+    this.navCtrl.navigateBack('/dashboard');
   }
 
 }

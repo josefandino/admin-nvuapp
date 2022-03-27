@@ -29,7 +29,8 @@ export class CreateAsignaturaPage implements OnInit {
 
   tipo;
   dataAsignatura: AsignaturaI = {
-    uid: this.id,
+    uid: null,
+    id: this.id,
     nameCarrera: null,
     tipo: null,
     promedioAprobacion: null,

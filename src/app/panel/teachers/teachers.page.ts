@@ -30,6 +30,10 @@ export class TeachersPage implements OnInit {
 
   ngOnInit() { this.getAllTeachers(); }
 
+  backButton() {
+    this.navCtrl.navigateBack('/dashboard');
+  }
+
   createTeacher() {
     this.teachersFireSvc.create('teachers', this.dataTeacher)
       .then(async resp => {

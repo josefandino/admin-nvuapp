@@ -31,8 +31,11 @@ export class CreateCoursesPage implements OnInit {
     private interactionSvc: InteractionService,
     private navCtrl: NavController,
   ) { }
-
   ngOnInit() { }
+
+  backButton() {
+    this.navCtrl.navigateBack('/dashboard');
+  }
 
   createCourse() {
     this.coursesSvc.create('courses', this.dataCourse)

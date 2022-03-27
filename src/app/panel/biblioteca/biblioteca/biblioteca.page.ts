@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-biblioteca',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BibliotecaPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private navCtrl: NavController
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  backButton() {
+    this.navCtrl.navigateBack('/dashboard');
   }
 
 }

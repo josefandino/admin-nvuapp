@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: 'admision', loadChildren: () => import('./pages/admision/admision.module').then( m => m.AdmisionPageModule) },
   { path: 'pagos', loadChildren: () => import('./panel/pagos/pagos.module').then( m => m.PagosPageModule) },
   { path: 'herramientas', loadChildren: () => import('./panel/herramientas/herramientas.module').then( m => m.HerramientasPageModule) },
-  { path: 'noticias', loadChildren: () => import('./panel/noticias/noticias.module').then( m => m.NoticiasPageModule) },
   { path: 'notas', loadChildren: () => import('./panel/notas/notas.module').then( m => m.NotasPageModule) },
   { path: 'horarios', loadChildren: () => import('./panel/horarios/horarios.module').then( m => m.HorariosPageModule) },
   { path: 'teachers', loadChildren: () => import('./panel/teachers/teachers.module').then( m => m.TeachersPageModule) },
@@ -73,8 +72,14 @@ const routes: Routes = [
   { path: 'plan-estudios', loadChildren: () => import('./panel/academico/plan-estudios/plan-estudios/plan-estudios.module').then( m => m.PlanEstudiosPageModule) },
   { path: 'create-plan-estudios', loadChildren: () => import('./panel/academico/plan-estudios/create-plan-estudios/create-plan-estudios.module').then( m => m.CreatePlanEstudiosPageModule) },
   { path: 'edit-plan-estudios', loadChildren: () => import('./panel/academico/plan-estudios/edit-plan-estudios/edit-plan-estudios.module').then( m => m.EditPlanEstudiosPageModule) },
-
+  { path: 'ciclo-academico', loadChildren: () => import('./panel/academico/ciclo-academico/ciclo-academico.module').then( m => m.CicloAcademicoPageModule) },
+  { path: 'create-ciclo-academico', loadChildren: () => import('./panel/academico/create-ciclo-academico/create-ciclo-academico.module').then( m => m.CreateCicloAcademicoPageModule) },
+  { path: 'edit-ciclo-academico', loadChildren: () => import('./panel/academico/edit-ciclo-academico/edit-ciclo-academico.module').then( m => m.EditCicloAcademicoPageModule) },
+  { path: 'news', loadChildren: () => import('./panel/noticias/news/news.module').then( m => m.NewsPageModule) },
+  { path: 'edit-news', loadChildren: () => import('./panel/noticias/edit-news/edit-news.module').then( m => m.EditNewsPageModule) },
+  { path: 'create-news', loadChildren: () => import('./panel/noticias/create-news/create-news.module').then( m => m.CreateNewsPageModule) },
   { path: '**', redirectTo: '/dashboard', pathMatch: 'full'  },
+
 
 
 ];

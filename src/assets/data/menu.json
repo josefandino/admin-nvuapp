@@ -99,7 +99,7 @@
   {
     "icon": "albums-outline",
     "name": "Noticias",
-    "redirectTo": "/noticias"
+    "redirectTo": "/news"
   },
   {
     "icon": "build-outline",

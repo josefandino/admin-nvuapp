@@ -31,7 +31,10 @@ export class CreateStudentsPage implements OnInit {
     private navCtrl: NavController
   ) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  backButton() {
+    this.navCtrl.navigateBack('/dashboard');
   }
 
   createStudent() {

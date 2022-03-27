@@ -43,6 +43,10 @@ export class AddTeacherPage implements OnInit {
 
   ngOnInit() { }
 
+  backButton() {
+    this.navCtrl.navigateBack('/dashboard');
+  }
+
   createTeacher() {
     this.teacherFireSvc.create('teachers', this.dataTeacher)
       .then(async resp => {

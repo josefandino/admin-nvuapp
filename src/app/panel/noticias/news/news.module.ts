@@ -1,22 +1,22 @@
-import { LayoutsModule } from './../../inc/layouts/layouts.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
+import { LayoutsModule } from 'src/app/inc/layouts/layouts.module';
 
-import { NoticiasPageRoutingModule } from './noticias-routing.module';
+import { NewsPageRoutingModule } from './news-routing.module';
 
-import { NoticiasPage } from './noticias.page';
+import { NewsPage } from './news.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    NoticiasPageRoutingModule,
+    NewsPageRoutingModule,
     LayoutsModule
   ],
-  declarations: [NoticiasPage]
+  declarations: [NewsPage]
 })
-export class NoticiasPageModule {}
+export class NewsPageModule {}

@@ -32,6 +32,10 @@ export class CoursesPage implements OnInit {
     this.getAllCourses();
   }
 
+  backButton() {
+    this.navCtrl.navigateBack('/dashboard');
+  }
+
   getAllCourses() {
     this.coursesSvc.getCourses('courses').then(fireResponse => {
       fireResponse.subscribe(listCoursesRef => {

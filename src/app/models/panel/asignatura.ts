@@ -1,5 +1,6 @@
 export interface AsignaturaI {
   uid: string;
+  id: string;
   nameCarrera: any;
   tipo: string;
   promedioAprobacion: string;

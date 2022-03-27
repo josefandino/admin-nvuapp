@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-finanzas-contabilidad',
@@ -14,9 +15,14 @@ export class FinanzasContabilidadPage implements OnInit {
     { name: 'Presupuesto y cumplimiento financiero', redirectTo: '/presupuesto-financiero' },
   ];
 
-  constructor() { }
+  constructor(
+    private navCtrl: NavController
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  backButton() {
+    this.navCtrl.navigateBack('/dashboard');
   }
 
 }

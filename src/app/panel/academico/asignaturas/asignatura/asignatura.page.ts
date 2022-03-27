@@ -40,7 +40,6 @@ export class AsignaturaPage implements OnInit {
           const asignatura = asignaturaRef.payload.doc.data();
           asignatura['id'] = asignaturaRef.payload.doc.id;
           this.id = asignaturaRef.payload.doc.id;
-          console.log('+++++++++++', asignatura);
           return asignatura;
         });
       });

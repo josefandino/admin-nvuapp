@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-recursos-humanos',
@@ -12,9 +13,14 @@ export class RecursosHumanosPage implements OnInit {
     { name: 'Reclutamiento docente y otros', redirectTo: '/reclutamiento-docente' },
   ];
 
-  constructor() { }
+  constructor(
+    private navCtrl: NavController
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  backButton() {
+    this.navCtrl.navigateBack('/dashboard');
   }
 
 }

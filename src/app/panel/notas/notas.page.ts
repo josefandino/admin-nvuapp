@@ -1,3 +1,4 @@
+import { NavController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
 import { InteractionService } from './../../services/interaction.service';
@@ -19,7 +20,8 @@ export class NotasPage implements OnInit {
 
   constructor(
     private notaFireSvc: NotasFireService,
-    public interactionSvc: InteractionService
+    public interactionSvc: InteractionService,
+    private navCtrl: NavController
   ) { }
 
 
@@ -36,6 +38,9 @@ export class NotasPage implements OnInit {
     });
   }
 
+  backButton() {
+    this.navCtrl.navigateBack('/dashboard');
+  }
 
   createNota() {
     this.notaFireSvc.create('notas', this.credentials)

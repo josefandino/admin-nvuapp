@@ -18,10 +18,15 @@ export class StudentsPage implements OnInit {
   constructor(
     private studentService: StudentsService,
     private interactionSvc: InteractionService,
+    private navCtrl: NavController
   ) { }
 
   ngOnInit() {
     this.getAllStudents();
+  }
+
+  backButton() {
+    this.navCtrl.navigateBack('/dashboard');
   }
 
   getAllStudents() {

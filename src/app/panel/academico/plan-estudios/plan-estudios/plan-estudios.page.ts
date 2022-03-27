@@ -22,5 +22,4 @@ export class PlanEstudiosPage implements OnInit {
   backButton() {
     return this.navCtrl.navigateBack('/academico');
   }
-
 }

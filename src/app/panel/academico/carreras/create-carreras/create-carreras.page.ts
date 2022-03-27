@@ -48,7 +48,7 @@ export class CreateCarrerasPage implements OnInit {
   clasificacion(e: CustomEvent) {
     const data = e.detail.value;
     this.dataCarrera.clasificacion = data;
-    console.log('++', this.dataCarrera.clasificacion );
+    // console.log( this.dataCarrera.clasificacion );
   }
 
   createCourse() {

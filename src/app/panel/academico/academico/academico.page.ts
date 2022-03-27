@@ -11,6 +11,7 @@ export class AcademicoPage implements OnInit {
 
   menuVAL = [
     { name: 'Carreras', redirectTo: '/carreras', icon: ''},
+    { name: 'Ciclo Académico', redirectTo: '/ciclo-academico', icon: ''},
     { name: 'Asignaturas', redirectTo: '/asignatura', icon: ''},
     { name: 'Plan de estudios', redirectTo: '/plan-estudios', icon: ''},
   ];

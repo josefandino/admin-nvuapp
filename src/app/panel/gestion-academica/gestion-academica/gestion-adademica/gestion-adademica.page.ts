@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-gestion-adademica',
@@ -13,9 +14,14 @@ export class GestionAdademicaPage implements OnInit {
     { name: 'Grados convocatorias', redirectTo: '/grados-convocatorias' },
   ];
 
-  constructor() { }
+  constructor(
+    private navCtrl: NavController
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  backButton() {
+    this.navCtrl.navigateBack('/dashboard');
   }
 
 }
