@@ -70,6 +70,9 @@ const routes: Routes = [
   { path: 'create-asignatura', loadChildren: () => import('./panel/academico/asignaturas/create-asignatura/create-asignatura.module').then( m => m.CreateAsignaturaPageModule) },
   { path: 'edit-asignatura', loadChildren: () => import('./panel/academico/asignaturas/edit-asignatura/edit-asignatura.module').then( m => m.EditAsignaturaPageModule) },
   { path: 'academico', loadChildren: () => import('./panel/academico/academico/academico.module').then(m => m.AcademicoPageModule) },
+  { path: 'plan-estudios', loadChildren: () => import('./panel/academico/plan-estudios/plan-estudios/plan-estudios.module').then( m => m.PlanEstudiosPageModule) },
+  { path: 'create-plan-estudios', loadChildren: () => import('./panel/academico/plan-estudios/create-plan-estudios/create-plan-estudios.module').then( m => m.CreatePlanEstudiosPageModule) },
+  { path: 'edit-plan-estudios', loadChildren: () => import('./panel/academico/plan-estudios/edit-plan-estudios/edit-plan-estudios.module').then( m => m.EditPlanEstudiosPageModule) },
 
   { path: '**', redirectTo: '/dashboard', pathMatch: 'full'  },
 
