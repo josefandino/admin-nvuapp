@@ -15,9 +15,9 @@
     <div class="news">
       <div class="childNews" *ngFor="let n of newsList">
         <h3 class="ion-text-center">{{ n.title | json }}</h3>
-        <p class="ion-text-center"><b>{{ n.author | json}}</b></p>
+        <p class="ion-text-center"><b>{{ n.author | json }}</b></p>
         <p>{{ n.description | json }}</p>
-        <p>{{ n.date | json }}</p>
+        <p>Fecha de cración: {{ n.date | json }}</p>
       </div>
     </div>
     <br>

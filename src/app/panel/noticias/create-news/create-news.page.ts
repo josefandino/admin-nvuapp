@@ -16,7 +16,6 @@ export class CreateNewsPage implements OnInit {
 
   date = new Date().toLocaleDateString();
   hours = new Date().toLocaleTimeString();
-
   fecha = this.date + ' ' + this.hours;
 
   dataNoticia: NoticiasI = {
