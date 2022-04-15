@@ -10,6 +10,7 @@
         <ion-label position="floating">Título</ion-label>
         <ion-input 
             type="text"
+            [maxlength]="inputLimit"
             [(ngModel)]="dataNoticia.title" 
             placeholder="Título de la noticia"></ion-input>
       </ion-item>
@@ -18,13 +19,14 @@
         <ion-label position="floating">Autor</ion-label>
         <ion-input 
             type="text"
+            [maxlength]="inputLimit"
             [(ngModel)]="dataNoticia.author" 
             placeholder="Autorde la noticia"></ion-input>
       </ion-item>
   
       <div class="textArea">
         <ion-textarea
-            type="text" rows="6" cols="20"
+            type="text" rows="4" cols="20"
             [(ngModel)]="dataNoticia.description"
             [maxlength]="limit"
             placeholder="Escribir una NOTICIA..."></ion-textarea>

@@ -8,60 +8,87 @@
 
     <ion-item>
       <ion-label position="floating">Nombres</ion-label>
-      <ion-input [(ngModel)]="student.name" type="text"></ion-input>
+      <ion-input 
+          type="text"
+          [(ngModel)]="student.name"
+          [maxlength]="inputLimit"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Apellidos</ion-label>
-      <ion-input [(ngModel)]="student.lastname" type="text"></ion-input>
+      <ion-input 
+          type="text"
+          [(ngModel)]="student.lastname"
+          [maxlength]="inputLimit"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Documento</ion-label>
-      <ion-input [(ngModel)]="student.document" type="number"></ion-input>
+      <ion-input 
+          type="number"
+          [(ngModel)]="student.document"
+          [maxlength]="inputLimit"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Email</ion-label>
       <ion-input
-          placeholder="Ejemplo@correo.com"
-          [(ngModel)]="student.email"
           type="email"
-          ></ion-input>
+          placeholder="Ejemplo@correo.com"
+          [(ngModel)]="student.email"          
+          [maxlength]="inputLimit"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Teléfono</ion-label>
-      <ion-input [(ngModel)]="student.phone" type="text"></ion-input>
+      <ion-input 
+          type="text"
+          [maxlength]="inputLimit"
+          [(ngModel)]="student.phone"
+          ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">País</ion-label>
-      <ion-input [(ngModel)]="student.country" type="text"></ion-input>
+      <ion-input 
+          type="text"
+          [maxlength]="inputLimit"
+          [(ngModel)]="student.country"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Ciudad</ion-label>
-      <ion-input [(ngModel)]="student.city" type="text"></ion-input>
+      <ion-input 
+          type="text"
+          [maxlength]="inputLimit"
+          [(ngModel)]="student.city"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Carrera</ion-label>
-      <ion-input type="phone" [(ngModel)]="student.carrera" ></ion-input>
+      <ion-input 
+          type="phone"  
+          [maxlength]="inputLimit"
+          [(ngModel)]="student.carrera"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">optsContactado</ion-label>
-      <ion-input [(ngModel)]="student.optsContactado" type="number"></ion-input>
+      <ion-input 
+          type="number"
+          [(ngModel)]="student.optsContactado" 
+          [maxlength]="inputLimit"></ion-input>
     </ion-item>
 
     <div class="textArea">
       <ion-textarea
-          type="text" rows="6" cols="20"
+          type="text" rows="4" cols="20"
           [(ngModel)]="student.information"
+          (keyup)="onKey($event)"
+          [maxlength]="limit"
           placeholder="Escribir la NOTA..."></ion-textarea>
+          <div class="maxleng">{{ contador }}/200</div>
     </div>
-
     <br>
 
     <ion-button  color="primary" expand="block" (click)="createStudent()">

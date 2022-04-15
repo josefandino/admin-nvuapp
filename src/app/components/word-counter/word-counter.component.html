@@ -1,0 +1,9 @@
+<div class="textArea">
+  <ion-textarea
+      type="text" rows="4" cols="20"
+      [(ngModel)]="student.information"
+      (keyup)="onKey($event)"
+      [maxlength]="limit"
+      placeholder="Escribir..."></ion-textarea>
+      <div class="maxleng">{{ contador }}/200</div>
+    </div>

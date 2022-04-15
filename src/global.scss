@@ -86,6 +86,11 @@ tr:nth-child(even) {background-color: #ddd;}
     border-radius: 5px;}
 }
 
+/* ===========   CONTADOR PALABRAS   =========== */ 
+.maxleng{width:100%;height:auto;
+  display:flex;justify-content: flex-end;
+}
+
 .form{width:100%;height:auto;
   ion-item{margin:1rem auto;
     border:1px solid var(--gris1);

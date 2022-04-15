@@ -35,6 +35,10 @@ export class AddTeacherPage implements OnInit {
 
   teachersList = [];
 
+  limit = 200;
+  inputLimit = 100;
+  contador = 0;
+
   constructor(
     private teacherFireSvc: AddTeacherService,
     private interactionSvc: InteractionService,
@@ -43,9 +47,8 @@ export class AddTeacherPage implements OnInit {
 
   ngOnInit() { }
 
-  backButton() {
-    this.navCtrl.navigateBack('/dashboard');
-  }
+  backButton() { this.navCtrl.navigateBack('/dashboard'); }
+  onKey(event){ this.contador = event.target.value.length; }
 
   createTeacher() {
     this.teacherFireSvc.create('teachers', this.dataTeacher)

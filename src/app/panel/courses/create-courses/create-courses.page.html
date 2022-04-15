@@ -8,38 +8,52 @@
 
     <ion-item>
       <ion-label position="floating">Nombre del curso</ion-label>
-      <ion-input [(ngModel)]="dataCourse.name" type="text"></ion-input>
+      <ion-input 
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataCourse.name" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Carrera</ion-label>
-      <ion-input [(ngModel)]="dataCourse.carrera" type="text"></ion-input>
+      <ion-input 
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataCourse.carrera" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">No. ciclo</ion-label>
-      <ion-input [(ngModel)]="dataCourse.numeroCiclo" type="number"></ion-input>
+      <ion-input 
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataCourse.numeroCiclo" type="number"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Profesor</ion-label>
-      <ion-input [(ngModel)]="dataCourse.teacher" type="text"></ion-input>
+      <ion-input 
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataCourse.teacher" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Código</ion-label>
-      <ion-input [(ngModel)]="dataCourse.codeCarrera" type="text"></ion-input>
+      <ion-input 
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataCourse.codeCarrera" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Autor</ion-label>
-      <ion-input [(ngModel)]="dataCourse.authorCarrera" type="text"></ion-input>
+      <ion-input 
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataCourse.authorCarrera" type="text"></ion-input>
     </ion-item>
 
     <div class="textArea">
       <ion-textarea
-          type="text" rows="6" cols="20"
+          type="text" rows="4" cols="20"
           [(ngModel)]="dataCourse.note"
+          (keyup)="onKey($event)"
+          [maxlength]="limit"
           placeholder="Escribir la NOTA..."></ion-textarea>
     </div>
 

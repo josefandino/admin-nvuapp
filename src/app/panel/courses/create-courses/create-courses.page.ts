@@ -25,6 +25,9 @@ export class CreateCoursesPage implements OnInit {
 
   coursesList = [];
   id: any;
+  limit = 200;
+  inputLimit = 100;
+  contador = 0;
 
   constructor(
     private coursesSvc: CoursesService,
@@ -33,9 +36,8 @@ export class CreateCoursesPage implements OnInit {
   ) { }
   ngOnInit() { }
 
-  backButton() {
-    this.navCtrl.navigateBack('/dashboard');
-  }
+  backButton() { this.navCtrl.navigateBack('/dashboard'); }
+  onKey(event){ this.contador = event.target.value.length; }
 
   createCourse() {
     this.coursesSvc.create('courses', this.dataCourse)

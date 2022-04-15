@@ -22,6 +22,7 @@
       <ion-label position="floating">Promedio de aprobación</ion-label>
       <ion-input 
           type="number"
+          [maxlength]="inputLimit"
           [(ngModel)]="dataAsignatura.promedioAprobacion" 
           placeholder=""></ion-input>
     </ion-item>
@@ -30,6 +31,7 @@
       <ion-label position="floating">Promedio de final</ion-label>
       <ion-input 
           type="number"
+          [maxlength]="inputLimit"
           [(ngModel)]="dataAsignatura.promedioFinal" 
           placeholder=""></ion-input>
     </ion-item>
@@ -38,6 +40,7 @@
       <ion-label position="floating">Nombre del la Asignatura </ion-label>
       <ion-input 
           type="text"
+          [maxlength]="inputLimit"
           [(ngModel)]="dataAsignatura.nameAsignatura" 
           placeholder=""></ion-input>
     </ion-item>
@@ -46,6 +49,7 @@
       <ion-label position="floating">Número de ciclo </ion-label>
       <ion-input 
           type="number"
+          [maxlength]="inputLimit"
           [(ngModel)]="dataAsignatura.numberCiclo" 
           placeholder=""></ion-input>
     </ion-item>
@@ -54,6 +58,7 @@
       <ion-label position="floating">Autor de la Asignatura </ion-label>
       <ion-input 
           type="text"
+          [maxlength]="inputLimit"
           [(ngModel)]="dataAsignatura.nameAuthor" 
           placeholder=""></ion-input>
     </ion-item>
@@ -75,15 +80,19 @@
       <ion-label position="floating">Código de Asignatura </ion-label>
       <ion-input 
           type="text"
+          [maxlength]="inputLimit"
           [(ngModel)]="dataAsignatura.codeAsignatura" 
           placeholder=""></ion-input>
     </ion-item>
 
     <div class="textArea">
       <ion-textarea
-          type="text" rows="6" cols="20"
+          type="text" rows="4" cols="20"
           [(ngModel)]="dataAsignatura.note"
+          (keyup)="onKey($event)"
+          [maxlength]="limit"
           placeholder="Escribir una NOTA..."></ion-textarea>
+      <div class="boxContador">{{ contador }}/200</div>
     </div>
 
     <br>

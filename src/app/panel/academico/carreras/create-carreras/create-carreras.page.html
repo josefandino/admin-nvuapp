@@ -8,6 +8,7 @@
       <ion-label position="floating">Nombre</ion-label>
       <ion-input 
           type="text"
+          [maxlength]="inputLimit"
           [(ngModel)]="dataCarrera.nameClass" 
           placeholder="Carrera"></ion-input>
     </ion-item>
@@ -37,6 +38,7 @@
       <ion-label position="floating">Autor</ion-label>
       <ion-input 
           type="text"
+          [maxlength]="inputLimit"
           [(ngModel)]="dataCarrera.authorCarrera" 
           placeholder="Nombre del Profesor"></ion-input>
     </ion-item>
@@ -72,9 +74,11 @@
 
     <div class="textArea">
       <ion-textarea
-          type="text" rows="6" cols="20"
+          type="text" rows="4" cols="20"
+          [maxlength]="limit"
           [(ngModel)]="dataCarrera.note"
           placeholder="Escribir una NOTA..."></ion-textarea>
+          <div class="boxContador">{{ contador }}/200</div>
     </div>
 
     <br>

@@ -12,8 +12,6 @@ import { NewsFirebaseService } from 'src/app/services/panel/noticias/news-fireba
 export class CreateNewsPage implements OnInit {
 
 
-  limit = 300;
-
   date = new Date().toLocaleDateString();
   hours = new Date().toLocaleTimeString();
   fecha = this.date + ' ' + this.hours;
@@ -30,6 +28,9 @@ export class CreateNewsPage implements OnInit {
 
   newsList = [];
   id: any;
+  limit = 200;
+  inputLimit = 100;
+  contador = 0;
 
   constructor(
     private noticiasFire: NewsFirebaseService,
@@ -39,9 +40,8 @@ export class CreateNewsPage implements OnInit {
 
   ngOnInit() { }
 
-  backButton() {
-    this.navCtrl.navigateBack('/dashboard');
-  }
+  backButton() { this.navCtrl.navigateBack('/dashboard'); }
+  onKey(event){ this.contador = event.target.value.length; }
 
   createNoticia() {
     this.noticiasFire.createNoticia('noticias', this.dataNoticia)

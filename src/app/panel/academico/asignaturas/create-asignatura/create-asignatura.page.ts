@@ -14,9 +14,6 @@ import { TeachersFireService } from 'src/app/services/panel/teachers/teachers-fi
 })
 export class CreateAsignaturaPage implements OnInit {
 
-  limit = 2000;
-  inputLimit = 100;
-
   date = new Date().toLocaleDateString();
   hours = new Date().toLocaleTimeString();
 
@@ -48,6 +45,10 @@ export class CreateAsignaturaPage implements OnInit {
   carrerasList = [];
   teachersList = [];
 
+  limit = 200;
+  inputLimit = 100;
+  contador = 0;
+
   constructor(
     private fireAsignatura: AsignaturasFirebaseService,
     private fireTeachers: TeachersFireService,
@@ -60,9 +61,8 @@ export class CreateAsignaturaPage implements OnInit {
 }
 
   ngOnInit() { }
-  backButton() {
-    this.navCtrl.navigateBack('/asignatura');
-  }
+  backButton() { this.navCtrl.navigateBack('/asignatura'); }
+  onKey(event){ this.contador = event.target.value.length; }
 
   selectedTipo(e: CustomEvent) {
     const data = e.detail.value;

@@ -7,17 +7,23 @@
 
     <ion-item>
       <ion-label position="floating">Nombres</ion-label>
-      <ion-input [(ngModel)]="dataTeacher.name" type="text"></ion-input>
+      <ion-input 
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataTeacher.name" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Apellidos</ion-label>
-      <ion-input [(ngModel)]="dataTeacher.lastname" type="text"></ion-input>
+      <ion-input 
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataTeacher.lastname" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Documento</ion-label>
-      <ion-input [(ngModel)]="dataTeacher.document" type="number"></ion-input>
+      <ion-input 
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataTeacher.document" type="number"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -33,27 +39,37 @@
 
     <ion-item>
       <ion-label position="floating">País de residencia</ion-label>
-      <ion-input [(ngModel)]="dataTeacher.countryOfResidence" type="text"></ion-input>
+      <ion-input 
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataTeacher.countryOfResidence" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Ciudad de residencia</ion-label>
-      <ion-input [(ngModel)]="dataTeacher.homeCity" type="text"></ion-input>
+      <ion-input 
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataTeacher.homeCity" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Dirección</ion-label>
-      <ion-input [(ngModel)]="dataTeacher.address" type="text"></ion-input>
+      <ion-input 
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataTeacher.address" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Teléfono</ion-label>
-      <ion-input type="phone" [(ngModel)]="dataTeacher.phone" ></ion-input>
+      <ion-input type="phone" 
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataTeacher.phone" ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Designación</ion-label>
-      <ion-input [(ngModel)]="dataTeacher.designacion" type="text"></ion-input>
+      <ion-input 
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataTeacher.designacion" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -74,12 +90,16 @@
 
     <ion-item>
       <ion-label position="floating">Email</ion-label>
-      <ion-input [(ngModel)]="dataTeacher.email" type="email"></ion-input>
+      <ion-input 
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataTeacher.email" type="email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input [(ngModel)]="dataTeacher.password" type="text"></ion-input>
+      <ion-input 
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataTeacher.password" type="text"></ion-input>
     </ion-item>
 
     <!-- <ion-item>
@@ -89,9 +109,12 @@
 
     <div class="textArea">
       <ion-textarea
-          type="text" rows="6" cols="20"
+          type="text" rows="4" cols="20"
           [(ngModel)]="dataTeacher.note"
+          (keyup)="onKey($event)"
+          [maxlength]="limit"
           placeholder="Escribir la NOTA..."></ion-textarea>
+          <div class="boxContador">{{ contador }}/200</div>
     </div>
 
     <br>

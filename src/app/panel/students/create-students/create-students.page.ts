@@ -25,6 +25,11 @@ export class CreateStudentsPage implements OnInit {
     politik: false,
     admitido: false
   };
+
+  limit = 200;
+  inputLimit = 100;
+  contador = 0;
+
   constructor(
     private studentService: StudentsService,
     private interactionSvc: InteractionService,
@@ -33,9 +38,9 @@ export class CreateStudentsPage implements OnInit {
 
   ngOnInit() { }
 
-  backButton() {
-    this.navCtrl.navigateBack('/dashboard');
-  }
+  backButton() { this.navCtrl.navigateBack('/dashboard'); }
+
+  onKey(event){ this.contador = event.target.value.length; }
 
   createStudent() {
     this.studentService.create('students', this.student)

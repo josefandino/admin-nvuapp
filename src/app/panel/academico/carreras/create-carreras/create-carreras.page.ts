@@ -14,9 +14,6 @@ import { Component, OnInit, } from '@angular/core';
 })
 export class CreateCarrerasPage implements OnInit {
 
-  limit = 2000;
-  inputLimit = 100;
-
   date = new Date().toLocaleDateString();
   hours = new Date().toLocaleTimeString();
 
@@ -34,6 +31,10 @@ export class CreateCarrerasPage implements OnInit {
   coursesList = [];
   id: any;
 
+  limit = 200;
+  inputLimit = 100;
+  contador = 0;
+
   constructor(
     private coursesSvc: CoursesService,
     private interactionSvc: InteractionService,
@@ -41,9 +42,8 @@ export class CreateCarrerasPage implements OnInit {
   ) { }
 
   ngOnInit() { }
-  backButton() {
-    this.navCtrl.navigateBack('/carreras');
-  }
+  backButton() { this.navCtrl.navigateBack('/carreras'); }
+  onKey(event){ this.contador = event.target.value.length; }
 
   clasificacion(e: CustomEvent) {
     const data = e.detail.value;
