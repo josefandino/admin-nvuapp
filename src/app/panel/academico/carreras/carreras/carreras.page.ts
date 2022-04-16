@@ -68,4 +68,5 @@ export class CarrerasPage implements OnInit {
       alert('Se elimino con éxito');
     }).catch((err) => alert('Error al ELIMINAR: ' + JSON.stringify(err)));
   }
+
 }

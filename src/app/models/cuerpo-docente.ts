@@ -1,6 +1,6 @@
-export interface TeacherI {
+export interface CuerpoDocenteI {
   uid: string;
-  name: string;
+  nameFull: string;
   document: string;
   age: number;
   countryOfResidence: string;
@@ -12,7 +12,9 @@ export interface TeacherI {
   dateEntry: string;
   avatar: string;
   usurname: string;
+  codeDocente?: string;
   password: string;
   note: string;
+  dateCreated: string;
   profile: 'teacher';
 }

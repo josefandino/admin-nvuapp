@@ -1,4 +1,4 @@
-<app-header (click)="backButton($event)" title="Agregar Profesor"></app-header>
+<app-header (click)="backButton($event)" title="Agregar Docente NVU"></app-header>
 <ion-content class="ion-padding">
 
   <div class="form container">
@@ -9,28 +9,21 @@
       <ion-label position="floating">Nombres y apellidos </ion-label>
       <ion-input 
           [maxlength]="inputLimit"
-          [(ngModel)]="dataTeacher.name" type="text"></ion-input>
+          [(ngModel)]="dataDocente.name" type="text"></ion-input>
     </ion-item>
-
-    <!-- <ion-item>
-      <ion-label position="floating">Apellidos</ion-label>
-      <ion-input 
-          [maxlength]="inputLimit"
-          [(ngModel)]="dataTeacher.lastname" type="text"></ion-input>
-    </ion-item> -->
 
     <ion-item>
       <ion-label position="floating">Documento</ion-label>
       <ion-input 
           [maxlength]="inputLimit"
-          [(ngModel)]="dataTeacher.document" type="number"></ion-input>
+          [(ngModel)]="dataDocente.document" type="number"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Fecha de Nacimiento</ion-label>
       <ion-input
           placeholder="2003-12-31"
-          [(ngModel)]="dataTeacher.age"
+          [(ngModel)]="dataDocente.age"
           type="date"
           max="2003-12-31"
           min="1940-12-31"
@@ -41,42 +34,42 @@
       <ion-label position="floating">País de residencia</ion-label>
       <ion-input 
           [maxlength]="inputLimit"
-          [(ngModel)]="dataTeacher.countryOfResidence" type="text"></ion-input>
+          [(ngModel)]="dataDocente.countryOfResidence" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Ciudad de residencia</ion-label>
       <ion-input 
           [maxlength]="inputLimit"
-          [(ngModel)]="dataTeacher.homeCity" type="text"></ion-input>
+          [(ngModel)]="dataDocente.homeCity" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Dirección</ion-label>
       <ion-input 
           [maxlength]="inputLimit"
-          [(ngModel)]="dataTeacher.address" type="text"></ion-input>
+          [(ngModel)]="dataDocente.address" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Teléfono</ion-label>
       <ion-input type="phone" 
           [maxlength]="inputLimit"
-          [(ngModel)]="dataTeacher.phone" ></ion-input>
+          [(ngModel)]="dataDocente.phone" ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Designación</ion-label>
       <ion-input 
           [maxlength]="inputLimit"
-          [(ngModel)]="dataTeacher.designacion" type="text"></ion-input>
+          [(ngModel)]="dataDocente.designacion" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Fecha de ingreso</ion-label>
       <ion-input
           placeholder="2003-12-31"
-          [(ngModel)]="dataTeacher.dateEntry"
+          [(ngModel)]="dataDocente.dateEntry"
           type="date"
           max="2026-12-31"
           min="2022-03-01"
@@ -85,41 +78,50 @@
 
     <!-- <ion-item>
       <ion-label position="floating">Username</ion-label>
-      <ion-input [(ngModel)]="dataTeacher.usurname" type="text"></ion-input>
+      <ion-input [(ngModel)]="dataDocente.usurname" type="text"></ion-input>
     </ion-item> -->
 
     <ion-item>
       <ion-label position="floating">Email</ion-label>
       <ion-input 
           [maxlength]="inputLimit"
-          [(ngModel)]="dataTeacher.email" type="email"></ion-input>
+          [(ngModel)]="dataDocente.email" type="email"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Código Docente</ion-label>
+      <ion-input 
+          type="text"
+          [maxlength]="inputLimit"
+          [maxlength]="20"
+          [(ngModel)]="dataDocente.codeTeacher" ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
       <ion-input 
           [maxlength]="inputLimit"
-          [(ngModel)]="dataTeacher.password" type="text"></ion-input>
+          [(ngModel)]="dataDocente.password" type="text"></ion-input>
     </ion-item>
 
     <!-- <ion-item>
       <ion-label position="floating">Foto</ion-label>
-      <ion-input [(ngModel)]="dataTeacher.avatar" type="text"></ion-input>
+      <ion-input [(ngModel)]="dataDocente.avatar" type="text"></ion-input>
     </ion-item> -->
 
     <div class="textArea">
       <ion-textarea
-          type="text" rows="4" cols="20"
-          [(ngModel)]="dataTeacher.note"
+          type="text" rows="3" cols="20"
+          [(ngModel)]="dataDocente.note"
           (keyup)="onKey($event)"
           [maxlength]="limit"
-          placeholder="Escribir la NOTA..."></ion-textarea>
-      <div class="maxleng">{{ contador }}/200</div>
+          placeholder="Escribir NOTA..."></ion-textarea>
+      <div class="maxleng">{{ contador }}/100</div>
     </div>
 
     <br>
 
-    <ion-button  color="primary" expand="block" (click)="createTeacher()">
+    <ion-button  color="primary" expand="block" (click)="createDocente()">
       Agregar Docente
     </ion-button>
 

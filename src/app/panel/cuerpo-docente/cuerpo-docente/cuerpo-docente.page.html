@@ -1,4 +1,4 @@
-<app-header (click)="backButton($event)" title="Docentes NVU"></app-header>
+<app-header (click)="backButton($event)" title="Cuerpo Docente NVU"></app-header>
 <ion-content class="ion-padding">
 
   <style>
@@ -9,18 +9,17 @@
 
     <div class="addBtn">
       <div class="childAddBtn">
-        <a routerLink="/add-teacher" color="success">
+        <a routerLink="/create-docente" color="success">
           <ion-icon slot="start" name="person-add-outline"></ion-icon>
           Agregar Docente
         </a>
       </div>
     </div>
 
-      <div class="ctnTable">
+      <div class="ctnTable" *ngIf="docentesList">
         <table>
             <tr>
               <th>Nombres</th>
-              <th>Apellidos</th>
               <th>Documento</th>
               <th>Fecha Nac.</th>
               <th>País</th>
@@ -34,14 +33,13 @@
               <th>Nota</th>
               <th>ACC</th>
             </tr>
-            <tr *ngFor="let t of teachersList">
+            <tr *ngFor="let t of docentesList">
               <td>{{ t.name | json }}</td>
-              <td>{{ t.lastname | json }}</td>
               <td>{{ t.document | json }}</td>
               <td>{{ t.age | json }}</td>
               <td>{{ t.countryOfResidence | json }}</td>
               <td>{{ t.homeCity | json }}</td>
-              <td>{{ t.addres | json }}</td>
+              <td>{{ t.address | json }}</td>
               <td>{{ t.phone | json }}</td>
               <td>{{ t.designacion | json }}</td>
               <td>{{ t.dateEntry | json }}</td>
@@ -50,7 +48,7 @@
               <td>{{ t.note | json }}</td>
               <td>
                 <!-- <ion-icon color="tertiary" style="zoom:2" name="create-outline" (click)="teacherById(t.id)"></ion-icon> -->
-                <ion-icon color="danger" style="zoom:2" name="trash-outline" (click)="deleteTeacher(t.id)"></ion-icon>
+                <ion-icon color="danger" style="zoom:2" name="trash-outline" (click)="deleteDocente(t.id)"></ion-icon>
               </td>
             </tr>
         </table>

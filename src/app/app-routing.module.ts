@@ -17,8 +17,6 @@ const routes: Routes = [
   { path: 'herramientas', loadChildren: () => import('./panel/herramientas/herramientas.module').then( m => m.HerramientasPageModule) },
   { path: 'notas', loadChildren: () => import('./panel/notas/notas.module').then( m => m.NotasPageModule) },
   { path: 'horarios', loadChildren: () => import('./panel/horarios/horarios.module').then( m => m.HorariosPageModule) },
-  { path: 'teachers', loadChildren: () => import('./panel/teachers/teachers/teachers-routing.module').then( m => m.TeachersPageRoutingModule) },
-  { path: 'add-teacher', loadChildren: () => import('./panel/teachers/add-teacher/add-teacher-routing.module').then( m => m.AddTeacherPageRoutingModule) },
   { path: 'students', loadChildren: () => import('./panel/students/students/students.module').then( m => m.StudentsPageModule) },
   { path: 'create-students', loadChildren: () => import('./panel/students/create-students/create-students.module').then( m => m.CreateStudentsPageModule) },
   { path: 'edit-students', loadChildren: () => import('./panel/students/edit-students/edit-students.module').then( m => m.EditStudentsPageModule) },
@@ -46,7 +44,6 @@ const routes: Routes = [
   { path: 'vice-rectoria-post-grado-investigacion', loadChildren: () => import('./panel/vice-rectoria-post-grado-investigacion/vice-rectoria-post-grado-investigacion.module').then( m => m.ViceRectoriaPostGradoInvestigacionPageModule) },
   { path: 'calendario-entretenimiento', loadChildren: () => import('./panel/calendario-entretenimiento/calendario-entretenimiento.module').then( m => m.CalendarioEntretenimientoPageModule) },
   { path: 'asociacion-alumons', loadChildren: () => import('./panel/asociacion-alumons/asociacion-alumons.module').then( m => m.AsociacionAlumonsPageModule) },
-  { path: 'equipo-docente', loadChildren: () => import('./panel/equipo-docente/equipo-docente.module').then( m => m.EquipoDocentePageModule) },
   { path: 'records-student', loadChildren: () => import('./panel/admision/records-student/records-student.module').then( m => m.RecordsStudentPageModule) },
   { path: 'services-student', loadChildren: () => import('./panel/services-student/services-student.module').then( m => m.ServicesStudentPageModule) },
   { path: 'pantillas-cartas-memos', loadChildren: () => import('./panel/admision/pantillas-cartas-memos/pantillas-cartas-memos.module').then( m => m.PantillasCartasMemosPageModule) },
@@ -81,10 +78,10 @@ const routes: Routes = [
   { path: 'section', loadChildren: () => import('./panel/academico/section/section/section.module').then( m => m.SectionPageModule) },
   { path: 'create-section', loadChildren: () => import('./panel/academico/section/create-section/create-section.module').then( m => m.CreateSectionPageModule) },
   { path: 'edit-section', loadChildren: () => import('./panel/academico/section/edit-section/edit-section.module').then( m => m.EditSectionPageModule) },
+  { path: 'cuerpo-docente', loadChildren: () => import('./panel/cuerpo-docente/cuerpo-docente/cuerpo-docente.module').then( m => m.CuerpoDocentePageModule) },
+  { path: 'create-docente', loadChildren: () => import('./panel/cuerpo-docente/create-docente/create-docente.module').then( m => m.CreateDocentePageModule) },
+  { path: 'edit-docente', loadChildren: () => import('./panel/cuerpo-docente/edit-docente/edit-docente.module').then( m => m.EditDocentePageModule) },
   { path: '**', redirectTo: '/dashboard', pathMatch: 'full' },
-
-
-
 
 
 

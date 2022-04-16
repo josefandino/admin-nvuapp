@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/dot-notation */
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { CuerpoDocenteI } from 'src/app/models/cuerpo-docente';
 import { CarrerasI } from 'src/app/models/panel/carreras';
 import { SectionI } from 'src/app/models/panel/section';
-import { TeacherI } from 'src/app/models/teachers';
+
 import { InteractionService } from 'src/app/services/interaction.service';
 import { CarrerasService } from 'src/app/services/panel/carreras/carreras.service';
 import { SectionService } from 'src/app/services/panel/section/section.service';
@@ -34,7 +35,7 @@ export class CreateSectionPage implements OnInit {
   dataCarrera: CarrerasI;
   carrerasList: any = [];
   sectionList = [];
-  dataTeacher: TeacherI;
+  dataTeacher: CuerpoDocenteI;
   teachersList = [];
   id: any;
 

@@ -4,10 +4,10 @@
     "name": "Alumnos",
     "redirectTo": "/students"
   },
-  {
+  { 
     "icon": "people-circle-outline",
-    "name": "Docentes",
-    "redirectTo": "/teachers"
+    "name": "Cuerpo Docente",
+    "redirectTo": "/cuerpo-docente"
   },
   {
     "icon": "bookmarks-outline",
@@ -79,11 +79,7 @@
     "name": "Asociación de alumnos",
     "redirectTo": "/asociacion-alumons"
   },
-  { 
-    "icon": "people-circle-outline",
-    "name": "Equipo docente",
-    "redirectTo": "/equipo-docente"
-  },
+  
   
 
 
