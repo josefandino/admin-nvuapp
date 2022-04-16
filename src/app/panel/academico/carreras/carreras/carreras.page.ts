@@ -29,18 +29,21 @@ export class CarrerasPage implements OnInit {
 
   backButton() { this.navCtrl.navigateBack('/academico'); }
 
-  getAllCarreras() {
-    this.carreraFire.getCarreras('carreras').then(fireResponse => {
-      fireResponse.subscribe(listCarrerasRef => {
-        this.interactionSvc.presentToast('Cargando...', 200, 'primary');
-        this.carrerasList = listCarrerasRef.map(carreraRef => {
-          const carrera = carreraRef.payload.doc.data();
-          carrera['id'] = carreraRef.payload.doc.id;
-          this.id = carreraRef.payload.doc.id;
-          return carrera;
+  async getAllCarreras() {
+    try {
+      return await this.carreraFire.getCarreras('carreras').then(async fireResponse => {
+        await this.interactionSvc.presentLoading('CARGANDO...');
+        return  fireResponse.subscribe( listCarrerasRef => {
+          this.carrerasList = listCarrerasRef.map( carreraRef => {
+            const carrera = carreraRef.payload.doc.data();
+            carrera['id'] = carreraRef.payload.doc.id;
+            this.id = carreraRef.payload.doc.id;
+            this.interactionSvc.closeLoading();
+            return carrera;
+          });
         });
       });
-    });
+    } catch (e_1) {alert(e_1); }
   }
 
   carreraById() {

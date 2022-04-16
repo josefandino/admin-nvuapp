@@ -1,10 +1,9 @@
 import { NavController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
-import { AddTeacherService } from './../../services/panel/teachers/add-teacher.service';
-import { InteractionService } from './../../services/interaction.service';
-
 import { TeacherI } from 'src/app/models/teachers';
+import { InteractionService } from 'src/app/services/interaction.service';
+import { AddTeacherService } from 'src/app/services/panel/teachers/add-teacher.service';
 
 @Component({
   selector: 'app-add-teacher',
@@ -16,7 +15,6 @@ export class AddTeacherPage implements OnInit {
   dataTeacher: TeacherI = {
     uid: null,
     name: null,
-    lastname: null,
     document: null,
     age: null,
     countryOfResidence: null,
@@ -40,8 +38,8 @@ export class AddTeacherPage implements OnInit {
   contador = 0;
 
   constructor(
-    private teacherFireSvc: AddTeacherService,
     private interactionSvc: InteractionService,
+    private teacherFireSvc: AddTeacherService,
     private navCtrl: NavController,
   ) { }
 

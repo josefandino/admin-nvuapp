@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/dot-notation */
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AdmisionI } from 'src/app/models/admision';

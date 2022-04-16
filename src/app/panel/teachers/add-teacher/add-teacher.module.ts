@@ -4,11 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LayoutsModule } from './../../inc/layouts/layouts.module';
 
 import { AddTeacherPageRoutingModule } from './add-teacher-routing.module';
 
 import { AddTeacherPage } from './add-teacher.page';
+import { LayoutsModule } from 'src/app/inc/layouts/layouts.module';
 
 @NgModule({
   imports: [

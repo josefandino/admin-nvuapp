@@ -1,0 +1,88 @@
+<app-header (click)="backButton($event)" title="Agregar Carrera " ></app-header>
+
+<ion-content class="ion-padding">
+
+  <section class="form container">
+
+    <ion-item>
+      <ion-label position="floating">Seleccionar seccion</ion-label>
+      <ion-select mode="ios" (ionChange)="section($event)" okText="Aceptar" cancelText="Cancelar"  placeholder="Seleccionar una Clasificación">
+        <ion-select-option value="virtual" >Virtual</ion-select-option>
+        <ion-select-option value="manana">Mañana</ion-select-option>
+        <ion-select-option value="tarde">Tarde</ion-select-option>
+        <ion-select-option value="noche">Noche</ion-select-option>
+        <ion-select-option value="presencial">Presencial</ion-select-option>
+        <ion-select-option value="becado">Becado</ion-select-option>
+        <ion-select-option value="personalizado">Personalizado</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Seleccionar categoría</ion-label>
+      <ion-select mode="ios" (ionChange)="categoria($event)" okText="Aceptar" cancelText="Cancelar"  placeholder="Seleccionar una Clasificación">
+        <ion-select-option value="curso" >Curso</ion-select-option>
+        <ion-select-option value="taller">Taller</ion-select-option>
+        <ion-select-option value="diplomado">Diplomado</ion-select-option>
+        <ion-select-option value="licenciatura">Licenciatura</ion-select-option>
+        <ion-select-option value="doctorado">Doctorado</ion-select-option>
+        <ion-select-option value="phd">PH.D</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Capacidad</ion-label>
+      <ion-input 
+          type="number"
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataSection.capacidad" 
+          placeholder="Categoría" ></ion-input>
+    </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Seleccionar Docente</ion-label>
+    <ion-select 
+        mode="ios" 
+        (ionChange)="carreras($event)" 
+        okText="Aceptar" cancelText="Cancelar" 
+        placeholder="Seleccionar Docente"
+        >
+      <ion-select-option *ngFor="let c of teachersList" value="{{ c.name | json }}" >{{ c.name | json }} </ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Seleccionar Carrera</ion-label>
+    <ion-select 
+        mode="ios" 
+        (ionChange)="carreras($event)" 
+        okText="Aceptar" cancelText="Cancelar" 
+        placeholder="Seleccionar una Carrera"  >
+      <ion-select-option *ngFor="let c of carrerasList" value="{{ c.nameClass | json }}">{{ c.nameClass | json }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+    <div class="textArea">
+      <ion-textarea
+          type="text" rows="3" cols="20"
+          [maxlength]="limit"
+          [(ngModel)]="dataSection.note"
+          (keyup)="onKey($event)"
+          placeholder="Escribir NOTA..." ></ion-textarea>
+      <div class="maxleng">{{ contador }}/80</div>
+    </div>
+
+    <br>
+
+    <ion-button  color="primary" expand="block" (click)="createSection()">
+      Agregar Section
+    </ion-button>
+
+    <br>
+  </section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+</ion-content>

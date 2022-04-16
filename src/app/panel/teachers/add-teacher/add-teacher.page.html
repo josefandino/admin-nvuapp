@@ -6,18 +6,18 @@
     <br>
 
     <ion-item>
-      <ion-label position="floating">Nombres</ion-label>
+      <ion-label position="floating">Nombres y apellidos </ion-label>
       <ion-input 
           [maxlength]="inputLimit"
           [(ngModel)]="dataTeacher.name" type="text"></ion-input>
     </ion-item>
 
-    <ion-item>
+    <!-- <ion-item>
       <ion-label position="floating">Apellidos</ion-label>
       <ion-input 
           [maxlength]="inputLimit"
           [(ngModel)]="dataTeacher.lastname" type="text"></ion-input>
-    </ion-item>
+    </ion-item> -->
 
     <ion-item>
       <ion-label position="floating">Documento</ion-label>
@@ -114,7 +114,7 @@
           (keyup)="onKey($event)"
           [maxlength]="limit"
           placeholder="Escribir la NOTA..."></ion-textarea>
-          <div class="boxContador">{{ contador }}/200</div>
+      <div class="maxleng">{{ contador }}/200</div>
     </div>
 
     <br>

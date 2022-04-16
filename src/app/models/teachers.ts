@@ -1,7 +1,6 @@
 export interface TeacherI {
   uid: string;
   name: string;
-  lastname: string;
   document: string;
   age: number;
   countryOfResidence: string;

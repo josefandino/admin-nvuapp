@@ -4,14 +4,14 @@
   <section class="form container">
 
     <ion-item>
-      <ion-label position="floating">Carrera</ion-label>
+      <ion-label position="floating">Seleccionar Carrera</ion-label>
       <ion-select mode="ios" (ionChange)="selectedCarrera($event)" okText="Aceptar" cancelText="Cancelar" placeholder="Seleccionar una tipo">
         <ion-select-option value="{{ c.nameClass | json }}" *ngFor="let c of carrerasList">{{ c.nameClass | json }}</ion-select-option>
       </ion-select>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Tipo</ion-label>
+      <ion-label position="floating">Seleccionar Tipo</ion-label>
       <ion-select mode="ios" (ionChange)="selectedTipo($event)" okText="Aceptar" cancelText="Cancelar" placeholder="Seleccionar una tipo">
         <ion-select-option value="opcional">Opcional</ion-select-option>
         <ion-select-option value="obligatorio">Obligatorio</ion-select-option>
@@ -64,11 +64,11 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Docente</ion-label>
+      <ion-label position="floating">Seleccionar Docente</ion-label>
       <ion-select 
           mode="ios" okText="Aceptar" 
           (ionChange)="selectedTeacher($event)"
-          cancelText="Cancelar" placeholder="Seleccionar una tipo">
+          cancelText="Cancelar" placeholder="Seleccionar una Docente">
         <ion-select-option 
               *ngFor="let t of teachersList"
               value="{{ t.name | json }}" 
@@ -92,7 +92,7 @@
           (keyup)="onKey($event)"
           [maxlength]="limit"
           placeholder="Escribir una NOTA..."></ion-textarea>
-      <div class="boxContador">{{ contador }}/200</div>
+      <div class="maxleng">{{ contador }}/200</div>
     </div>
 
     <br>

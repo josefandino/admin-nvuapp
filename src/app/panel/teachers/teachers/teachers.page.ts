@@ -5,11 +5,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
-import { InteractionService } from './../../services/interaction.service';
-
-import { TeachersFireService } from './../../services/panel/teachers/teachers-fire.service';
 
 import { TeacherI } from 'src/app/models/teachers';
+import { InteractionService } from 'src/app/services/interaction.service';
+import { TeachersFireService } from 'src/app/services/panel/teachers/teachers-fire.service';
 
 @Component({
   selector: 'app-teachers',
@@ -48,18 +47,21 @@ export class TeachersPage implements OnInit {
       }).catch((e) => alert(JSON.stringify(e)));
   }
 
-  getAllTeachers() {
-    this.teachersFireSvc.getTeachers('teachers').then(fireResponse => {
-      fireResponse.subscribe(listTeachersRef => {
-        this.interactionSvc.presentToast('Cargando...', 200, 'primary');
-        this.teachersList = listTeachersRef.map(teacherRef => {
-          const teacher = teacherRef.payload.doc.data();
-          teacher['id'] = teacherRef.payload.doc.id;
-          this.id = teacherRef.payload.doc.id;
-          return teacher;
+  async getAllTeachers() {
+    try {
+      return await this.teachersFireSvc.getTeachers('teachers').then(async fireResponse => {
+        await this.interactionSvc.presentLoading('CARGANDO...');
+        return await fireResponse.subscribe(listTeachersRef => {
+          this.teachersList = listTeachersRef.map(teacherRef => {
+            const teacher = teacherRef.payload.doc.data();
+            teacher['id'] = teacherRef.payload.doc.id;
+            this.id = teacherRef.payload.doc.id;
+            this.interactionSvc.closeLoading();
+            return teacher;
+          });
         });
       });
-    });
+    } catch (e_2) { alert(e_2); }
   }
 
   teacherById() {

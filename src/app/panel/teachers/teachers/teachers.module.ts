@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LayoutsModule } from './../../inc/layouts/layouts.module';
 import { TeachersPageRoutingModule } from './teachers-routing.module';
 
 import { TeachersPage } from './teachers.page';
+import { LayoutsModule } from 'src/app/inc/layouts/layouts.module';
 
 @NgModule({
   imports: [

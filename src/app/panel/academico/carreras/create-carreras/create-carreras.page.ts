@@ -31,7 +31,7 @@ export class CreateCarrerasPage implements OnInit {
   coursesList = [];
   id: any;
 
-  limit = 200;
+  limit = 100;
   inputLimit = 100;
   contador = 0;
 
@@ -45,7 +45,7 @@ export class CreateCarrerasPage implements OnInit {
   backButton() { this.navCtrl.navigateBack('/carreras'); }
   onKey(event){ this.contador = event.target.value.length; }
 
-  clasificacion(e: CustomEvent) {
+  categoria(e: CustomEvent) {
     const data = e.detail.value;
     this.dataCarrera.clasificacion = data;
     // console.log( this.dataCarrera.clasificacion );

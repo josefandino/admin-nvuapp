@@ -17,8 +17,8 @@ const routes: Routes = [
   { path: 'herramientas', loadChildren: () => import('./panel/herramientas/herramientas.module').then( m => m.HerramientasPageModule) },
   { path: 'notas', loadChildren: () => import('./panel/notas/notas.module').then( m => m.NotasPageModule) },
   { path: 'horarios', loadChildren: () => import('./panel/horarios/horarios.module').then( m => m.HorariosPageModule) },
-  { path: 'teachers', loadChildren: () => import('./panel/teachers/teachers.module').then( m => m.TeachersPageModule) },
-  { path: 'add-teacher', loadChildren: () => import('./panel/add-teacher/add-teacher.module').then( m => m.AddTeacherPageModule) },
+  { path: 'teachers', loadChildren: () => import('./panel/teachers/teachers/teachers-routing.module').then( m => m.TeachersPageRoutingModule) },
+  { path: 'add-teacher', loadChildren: () => import('./panel/teachers/add-teacher/add-teacher-routing.module').then( m => m.AddTeacherPageRoutingModule) },
   { path: 'students', loadChildren: () => import('./panel/students/students/students.module').then( m => m.StudentsPageModule) },
   { path: 'create-students', loadChildren: () => import('./panel/students/create-students/create-students.module').then( m => m.CreateStudentsPageModule) },
   { path: 'edit-students', loadChildren: () => import('./panel/students/edit-students/edit-students.module').then( m => m.EditStudentsPageModule) },
@@ -72,13 +72,19 @@ const routes: Routes = [
   { path: 'plan-estudios', loadChildren: () => import('./panel/academico/plan-estudios/plan-estudios/plan-estudios.module').then( m => m.PlanEstudiosPageModule) },
   { path: 'create-plan-estudios', loadChildren: () => import('./panel/academico/plan-estudios/create-plan-estudios/create-plan-estudios.module').then( m => m.CreatePlanEstudiosPageModule) },
   { path: 'edit-plan-estudios', loadChildren: () => import('./panel/academico/plan-estudios/edit-plan-estudios/edit-plan-estudios.module').then( m => m.EditPlanEstudiosPageModule) },
-  { path: 'ciclo-academico', loadChildren: () => import('./panel/academico/ciclo-academico/ciclo-academico.module').then( m => m.CicloAcademicoPageModule) },
-  { path: 'create-ciclo-academico', loadChildren: () => import('./panel/academico/create-ciclo-academico/create-ciclo-academico.module').then( m => m.CreateCicloAcademicoPageModule) },
-  { path: 'edit-ciclo-academico', loadChildren: () => import('./panel/academico/edit-ciclo-academico/edit-ciclo-academico.module').then( m => m.EditCicloAcademicoPageModule) },
+  { path: 'ciclo-academico', loadChildren: () => import('./panel/academico/ciclo-academico/ciclo-academico/ciclo-academico.module').then( m => m.CicloAcademicoPageModule) },
+  { path: 'create-ciclo-academico', loadChildren: () => import('./panel/academico/ciclo-academico/create-ciclo-academico/create-ciclo-academico.module').then( m => m.CreateCicloAcademicoPageModule) },
+  { path: 'edit-ciclo-academico', loadChildren: () => import('./panel/academico/ciclo-academico/edit-ciclo-academico/edit-ciclo-academico.module').then( m => m.EditCicloAcademicoPageModule) },
   { path: 'news', loadChildren: () => import('./panel/noticias/news/news.module').then( m => m.NewsPageModule) },
-  { path: 'edit-news', loadChildren: () => import('./panel/noticias/edit-news/edit-news.module').then( m => m.EditNewsPageModule) },
   { path: 'create-news', loadChildren: () => import('./panel/noticias/create-news/create-news.module').then( m => m.CreateNewsPageModule) },
-  { path: '**', redirectTo: '/dashboard', pathMatch: 'full'  },
+  { path: 'edit-news', loadChildren: () => import('./panel/noticias/edit-news/edit-news.module').then( m => m.EditNewsPageModule) },
+  { path: 'section', loadChildren: () => import('./panel/academico/section/section/section.module').then( m => m.SectionPageModule) },
+  { path: 'create-section', loadChildren: () => import('./panel/academico/section/create-section/create-section.module').then( m => m.CreateSectionPageModule) },
+  { path: 'edit-section', loadChildren: () => import('./panel/academico/section/edit-section/edit-section.module').then( m => m.EditSectionPageModule) },
+  { path: '**', redirectTo: '/dashboard', pathMatch: 'full' },
+
+
+
 
 
 

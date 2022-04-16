@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-import { LayoutsModule } from 'src/app/inc/layouts/layouts.module';
 
 import { CicloAcademicoPageRoutingModule } from './ciclo-academico-routing.module';
+import { LayoutsModule } from 'src/app/inc/layouts/layouts.module';
 
 import { CicloAcademicoPage } from './ciclo-academico.page';
 
