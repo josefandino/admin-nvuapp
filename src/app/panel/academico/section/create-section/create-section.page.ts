@@ -119,14 +119,12 @@ export class CreateSectionPage implements OnInit {
 
   async getAllTeachers() {
     try {
-      return await this.teachersFireSvc.getTeachers('teachers').then(async fireResponse => {
-        // await this.interactionSvc.presentLoading('CARGANDO...');
+      return await this.teachersFireSvc.getTeachers('docentes').then(async fireResponse => {
         fireResponse.subscribe(listTeachersRef => {
           this.teachersList = listTeachersRef.map(teacherRef => {
             const teacher = teacherRef.payload.doc.data();
             teacher['id'] = teacherRef.payload.doc.id;
             this.id = teacherRef.payload.doc.id;
-            // this.interactionSvc.closeLoading();
             return teacher;
           });
         });

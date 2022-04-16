@@ -1,9 +1,64 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>CreatePlanEstudios</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header (click)="backButton($event)" title="Agregar Carrera " ></app-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+
+  <section class="form container">
+
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input 
+          type="text"
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataPlanEstudio.title" 
+          placeholder="Categoría" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Fecha </ion-label>
+      <ion-input
+          [placeholder]="date"
+          [(ngModel)]="dataPlanEstudio.dateExamen"
+          type="date"
+          max="2024-12-31"
+          min="2022-04-30"
+          ></ion-input>
+    </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Seleccionar Carrera</ion-label>
+    <ion-select 
+        mode="ios" 
+        (ionChange)="carreras($event)" 
+        okText="Aceptar" cancelText="Cancelar" 
+        placeholder="Seleccionar una Carrera"  >
+      <ion-select-option *ngFor="let c of carrerasList" value="{{ c.nameClass | json }}">{{ c.nameClass | json }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <div class="textArea">
+    <ion-textarea
+        type="text" rows="3" cols="20"
+        [maxlength]="limit"
+        [(ngModel)]="dataPlanEstudio.description"
+        (keyup)="onKey($event)"
+        placeholder="Agregar descripción..." ></ion-textarea>
+    <div class="maxleng">{{ contador }}/200</div>
+  </div>
+
+    
+
+    <br>
+
+    <ion-button  color="primary" expand="block" (click)="createplanEstudios()">
+      Agregar Plan de estudio
+    </ion-button>
+
+    <br>
+  </section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
 </ion-content>
