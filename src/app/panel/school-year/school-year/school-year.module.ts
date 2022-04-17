@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
+import { LayoutsModule } from './../../../inc/layouts/layouts.module';
 
 import { SchoolYearPageRoutingModule } from './school-year-routing.module';
 
@@ -13,7 +14,8 @@ import { SchoolYearPage } from './school-year.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    SchoolYearPageRoutingModule
+    SchoolYearPageRoutingModule,
+    LayoutsModule
   ],
   declarations: [SchoolYearPage]
 })

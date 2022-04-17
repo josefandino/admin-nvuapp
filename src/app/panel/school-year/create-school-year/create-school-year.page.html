@@ -1,9 +1,62 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>createSchoolYear</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header (click)="backButton($event)" title="Agregar Año académico " ></app-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+
+  <section class="form container">
+
+    
+    <ion-item>
+      <ion-label position="floating">Año académico</ion-label>
+      <ion-input 
+          type="number"
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataSchoolYear.schoolyear" 
+          [placeholder]="year" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Título del año</ion-label>
+      <ion-input 
+          type="text"
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataSchoolYear.schoolyeartitle" 
+          placeholder="Primer trimestre: {{ year }}" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Fecha Inicio</ion-label>
+      <ion-input
+          [placeholder]="year"
+          [(ngModel)]="dataSchoolYear.startingdate"
+          type="date"
+          max="2025-12-31"
+          [min]="fecha"
+          ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Fecha final</ion-label>
+      <ion-input
+          [placeholder]="date"
+          [(ngModel)]="dataSchoolYear.endingdate"
+          type="date"
+          max="2024-12-31"
+          [min]="fecha"
+          ></ion-input>
+    </ion-item>
+
+    <br>
+
+    <ion-button  color="primary" expand="block" (click)="createSchoolYear()">
+      Agregar año académico
+    </ion-button>
+
+    <br>
+  </section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
 </ion-content>

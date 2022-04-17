@@ -1,9 +1,46 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>schoolYear</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header (click)="backButton($event)" title="Año académico NVU" ></app-header>
+<ion-content class="ion-padding">
 
-<ion-content>
+  <section class="container">
+
+    <div class="addBtn">
+      <div class="childAddBtn">
+        <a routerLink="/create-school-year" color="success">
+          <ion-icon slot="start" name="add-outline"></ion-icon>
+          Año académico
+        </a>
+      </div>
+    </div>
+
+      <div class="ctnTable">
+        <table>
+            <tr>
+              <th>Año</th>
+              <th>Título año</th>
+              <th>Fecha inicio</th>
+              <th>Fecha final</th>
+              <th>Fecha creación</th>
+              <th>Acciones</th>
+            </tr>
+            <tr *ngFor="let t of schoolYearList">
+              <td>{{ t.schoolyear | json }}</td>
+              <td>{{ t.schoolyeartitle | json }}</td>
+              <td>{{ t.startingdate | json }}</td>
+              <td>{{ t.endingdate | json }}</td>
+              <td>{{ t.dateCreated | json }}</td>
+              <td>
+                <!-- <ion-icon color="tertiary" style="zoom:2" name="create-outline" (click)="updateSection(t.id)"></ion-icon> -->
+                <ion-icon color="danger" style="zoom:2" name="trash-outline" (click)="deleteSchoolYear(t.id)"></ion-icon>
+              </td>
+            </tr>
+        </table>
+    </div>
+    
+  </section>
+
+  <br>
+  <br>
+  <br>
+  <br>
 
 </ion-content>
