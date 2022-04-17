@@ -16,7 +16,6 @@ const routes: Routes = [
   { path: 'pagos', loadChildren: () => import('./panel/pagos/pagos.module').then( m => m.PagosPageModule) },
   { path: 'herramientas', loadChildren: () => import('./panel/herramientas/herramientas.module').then( m => m.HerramientasPageModule) },
   { path: 'notas', loadChildren: () => import('./panel/notas/notas.module').then( m => m.NotasPageModule) },
-  { path: 'horarios', loadChildren: () => import('./panel/horarios/horarios.module').then( m => m.HorariosPageModule) },
   { path: 'students', loadChildren: () => import('./panel/students/students/students.module').then( m => m.StudentsPageModule) },
   { path: 'create-students', loadChildren: () => import('./panel/students/create-students/create-students.module').then( m => m.CreateStudentsPageModule) },
   { path: 'edit-students', loadChildren: () => import('./panel/students/edit-students/edit-students.module').then( m => m.EditStudentsPageModule) },
@@ -81,10 +80,16 @@ const routes: Routes = [
   { path: 'cuerpo-docente', loadChildren: () => import('./panel/cuerpo-docente/cuerpo-docente/cuerpo-docente.module').then( m => m.CuerpoDocentePageModule) },
   { path: 'create-docente', loadChildren: () => import('./panel/cuerpo-docente/create-docente/create-docente.module').then( m => m.CreateDocentePageModule) },
   { path: 'edit-docente', loadChildren: () => import('./panel/cuerpo-docente/edit-docente/edit-docente.module').then( m => m.EditDocentePageModule) },
+  { path: 'horarios', loadChildren: () => import('./panel/academico/horarios/horarios/horarios.module').then( m => m.HorariosPageModule) },
+  { path: 'create-horarios', loadChildren: () => import('./panel/academico/horarios/create-horarios/create-horarios.module').then( m => m.CreateHorariosPageModule) },
+  { path: 'edit-horarios', loadChildren: () => import('./panel/academico/horarios/edit-horarios/edit-horarios.module').then( m => m.EditHorariosPageModule) },
+  { path: 'tareas', loadChildren: () => import('./panel/academico/tareas/tareas/tareas.module').then( m => m.TareasPageModule) },
+  { path: 'edit-tareas', loadChildren: () => import('./panel/academico/tareas/edit-tareas/edit-tareas.module').then( m => m.EditTareasPageModule) },
+  { path: 'create-tareas', loadChildren: () => import('./panel/academico/tareas/create-tareas/create-tareas.module').then( m => m.CreateTareasPageModule) },
+  { path: 'school-year', loadChildren: () => import('./panel/school-year/school-year/school-year.module').then( m => m.SchoolYearPageModule) },
+  { path: 'create-school-year', loadChildren: () => import('./panel/school-year/create-school-year/create-school-year.module').then( m => m.CreateSchoolYearPageModule) },
+  { path: 'edit-school-year', loadChildren: () => import('./panel/school-year/edit-school-year/edit-school-year.module').then( m => m.EditSchoolYearPageModule) },
   { path: '**', redirectTo: '/dashboard', pathMatch: 'full' },
-
-
-
 ];
 
 @NgModule({

@@ -1,0 +1,111 @@
+<app-header (click)="backButton($event)" title="Agregar Tarea " ></app-header>
+
+<ion-content class="ion-padding">
+
+  <section class="form container">
+
+    <ion-item>
+      <ion-label position="floating">Nombre tarea</ion-label>
+      <ion-input 
+          type="text"
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataTarea.title" 
+          placeholder="Categoría" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Fecha limite</ion-label>
+      <ion-input
+          [placeholder]="date"
+          [(ngModel)]="dataTarea.deadline"
+          type="date"
+          max="2024-12-31"
+          min="2022-04-30"
+          ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Seleccionar Carrera</ion-label>
+      <ion-select 
+          mode="ios" 
+          (ionChange)="carreras($event)" 
+          okText="Aceptar" cancelText="Cancelar" 
+          placeholder="Seleccionar una Carrera"  >
+        <ion-select-option *ngFor="let c of carrerasList" value="{{ c.nameClass | json }}">{{ c.nameClass | json }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Seleccionar Sección</ion-label>
+      <ion-select 
+          mode="ios" 
+          (ionChange)="carreras($event)" 
+          okText="Aceptar" cancelText="Cancelar" 
+          placeholder="Seleccionar sección"  >
+        <ion-select-option *ngFor="let c of sectiosList" value="{{ c.section| json }}">{{ c.section| json }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Seleccionar Asignatura</ion-label>
+      <ion-select 
+          mode="ios" 
+          (ionChange)="carreras($event)" 
+          okText="Aceptar" cancelText="Cancelar" 
+          placeholder="Seleccionar Docente"
+          >
+        <ion-select-option *ngFor="let c of asignaturasList" value="{{ c.name | json }}" >{{ c.name | json }} </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Seleccionar seccion</ion-label>
+      <ion-select mode="ios" (ionChange)="sections($event)" okText="Aceptar" cancelText="Cancelar"  placeholder="Seleccionar una Clasificación">
+        <ion-select-option value="virtual" >Virtual</ion-select-option>
+        <ion-select-option value="manana">Mañana</ion-select-option>
+        <ion-select-option value="tarde">Tarde</ion-select-option>
+        <ion-select-option value="noche">Noche</ion-select-option>
+        <ion-select-option value="presencial">Presencial</ion-select-option>
+        <ion-select-option value="becado">Becado</ion-select-option>
+        <ion-select-option value="personalizado">Personalizado</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Capacidad</ion-label>
+      <ion-input 
+          type="number"
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataTarea.capacidad" 
+          placeholder="Categoría" ></ion-input>
+    </ion-item>
+
+  
+  
+  
+
+    <div class="textArea">
+      <ion-textarea
+          type="text" rows="3" cols="20"
+          [maxlength]="limit"
+          [(ngModel)]="dataTarea.description"
+          (keyup)="onKey($event)"
+          placeholder="Descripción..." ></ion-textarea>
+      <div class="maxleng">{{ contador }}/80</div>
+    </div>
+
+    <br>
+
+    <ion-button  color="primary" expand="block" (click)="createSection()">
+      Agregar Section
+    </ion-button>
+
+    <br>
+  </section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+</ion-content>

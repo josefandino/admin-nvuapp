@@ -3,20 +3,20 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
+import { LayoutsModule } from './../../../../inc/layouts/layouts.module';
 
-import { HorariosPageRoutingModule } from './horarios-routing.module';
+import { TareasPageRoutingModule } from './tareas-routing.module';
 
-import { HorariosPage } from './horarios.page';
-import { LayoutsModule } from './../../inc/layouts/layouts.module';
+import { TareasPage } from './tareas.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HorariosPageRoutingModule,
+    TareasPageRoutingModule,
     LayoutsModule
   ],
-  declarations: [HorariosPage]
+  declarations: [TareasPage]
 })
-export class HorariosPageModule {}
+export class TareasPageModule {}
