@@ -2,16 +2,19 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { AdmisionI } from 'src/app/models/admision';
+
 import { AsignaturaI } from 'src/app/models/panel/asignatura';
 import { CarrerasI } from 'src/app/models/panel/carreras';
+import { GroupStudentsI } from 'src/app/models/panel/group-students';
 import { SectionI } from 'src/app/models/panel/section';
 import { StudentsI } from 'src/app/models/panel/student';
+
 import { CountriesService } from 'src/app/services/countries/countries.service';
 import { InteractionService } from 'src/app/services/interaction.service';
 import { AsignaturasFirebaseService } from 'src/app/services/panel/asignaturas/asignaturas-firebase.service';
 import { CarrerasService } from 'src/app/services/panel/carreras/carreras.service';
 import { SectionService } from 'src/app/services/panel/section/section.service';
+import { GroupStudentsService } from 'src/app/services/panel/students/group-students.service';
 import { StudentsService } from 'src/app/services/panel/students/students.service';
 
 @Component({
@@ -48,8 +51,8 @@ export class CreateStudentsPage implements OnInit {
     sectionID: '',
     roll: '',
     bloodgroup: '',
-    carrera: null,
-    asignatura: null,
+    carrera: '',
+    asignatura: '',
     registerNO: '',
     library: '',
     photo: '',
@@ -72,10 +75,13 @@ export class CreateStudentsPage implements OnInit {
   dataAsignaturas: AsignaturaI;
   asignaturasList = [];
 
-  dataSections: SectionI;
-  sectiosList = [];
-  id: any;
+  dataSection: SectionI;
+  sectionsList = [];
 
+  dataGroupStuent: GroupStudentsI;
+  groupStudentsList = [];
+
+  id: any;
   limit = 80;
   inputLimit = 100;
   contador = 0;
@@ -84,11 +90,13 @@ export class CreateStudentsPage implements OnInit {
 
   constructor(
     private asignaturaFireSvc: AsignaturasFirebaseService,
+    private groupStudentsFire: GroupStudentsService,
     private interactionSvc: InteractionService,
     private studentService: StudentsService,
     private countriesSvc: CountriesService,
     private sectionFireSvc: SectionService,
     private carreraFire: CarrerasService,
+    private sectionSvc: SectionService,
     private navCtrl: NavController,
   ) {
     this.initializar();
@@ -104,6 +112,8 @@ export class CreateStudentsPage implements OnInit {
     await this.paisesData();
     await this.getAllCarreras();
     await this.getAllAsignaturas();
+    await this.getAllGroupStudents();
+    await this.getAllSections();
     await this.interactionSvc.closeLoading();
   }
 
@@ -136,11 +146,17 @@ export class CreateStudentsPage implements OnInit {
     console.log(this.dataStudent.carrera);
   }
 
-  // sections(e: CustomEvent) {
-  //   const data = e.detail.value;
-  //   this.dataStudent.section = data;
-  //   console.log(this.dataStudent.section);
-  // }
+  groupStudents(e: CustomEvent) {
+    const data = e.detail.value;
+    this.dataStudent.bloodgroup = data;
+    console.log(this.dataStudent.bloodgroup);
+  }
+
+  sections(e: CustomEvent) {
+    const data = e.detail.value;
+    this.dataStudent.sectionID = data;
+    console.log(this.dataStudent.sectionID);
+  }
 
   asignaturas(e: CustomEvent) {
     const data = e.detail.value;
@@ -171,9 +187,9 @@ export class CreateStudentsPage implements OnInit {
 
   async getAllSections() {
     try {
-      return await this.sectionFireSvc.getSections('sections').then(async fireResponse => {
+      return await this.sectionFireSvc.getSections('section').then(async fireResponse => {
         fireResponse.subscribe(listSectionRef => {
-          this.sectiosList = listSectionRef.map(sectionRef => {
+          this.sectionsList = listSectionRef.map(sectionRef => {
             const section = sectionRef.payload.doc.data();
             section['id'] = sectionRef.payload.doc.id;
             this.id = sectionRef.payload.doc.id;
@@ -199,18 +215,19 @@ export class CreateStudentsPage implements OnInit {
     } catch (e_3) { alert(e_3); }
   }
 
-  // getAllAsignaturas(): Promise<any> {
-  //   return this.fireAsignatura.getAsignaturas('asignaturas').then(fireResponse => {
-  //     fireResponse.subscribe(listAsignaturasRef => {
-  //       this.interactionSvc.presentToast('Cargando...', 200, 'primary');
-  //       this.asignaturasList = listAsignaturasRef.map(asignaturaRef => {
-  //         const asignatura = asignaturaRef.payload.doc.data();
-  //         asignatura['id'] = asignaturaRef.payload.doc.id;
-  //         this.id = asignaturaRef.payload.doc.id;
-  //         return asignatura;
-  //       });
-  //     });
-  //   }).catch((err) => alert('ERROR: ' + JSON.stringify(err)));
-  // }
+  async getAllGroupStudents() {
+    try {
+      await this.groupStudentsFire.getAllGroupStudents('group-students').then(async fireResponse => {
+        fireResponse.subscribe(async listGroupStudentsRef => {
+          this.groupStudentsList = listGroupStudentsRef.map( groupStudentRef => {
+            const groupStudent = groupStudentRef.payload.doc.data();
+            groupStudent['id'] = groupStudentRef.payload.doc.id;
+            this.id = groupStudentRef.payload.doc.id;
+            return groupStudent;
+          });
+        });
+      });
+    } catch (e_1) {alert(e_1); }
+  }
 
 }

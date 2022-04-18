@@ -17,6 +17,7 @@ export class AcademicoPage implements OnInit {
     { name: 'Plan de estudios', redirectTo: '/plan-estudios', icon: ''},
     { name: 'Tareas', redirectTo: '/tareas', icon: ''},
     { name: 'Horario', redirectTo: '/horarios', icon: ''},
+    { name: 'Grupo de Alumnos', redirectTo: '/group-students', icon: ''},
   ];
 
   constructor(

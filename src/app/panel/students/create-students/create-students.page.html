@@ -52,7 +52,7 @@
           mode="ios" 
           (ionChange)="paises($event)" 
           okText="Aceptar" cancelText="Cancelar" 
-          placeholder="Seleccionar Docente"
+          placeholder="Seleccionar país"
           >
         <ion-select-option *ngFor="let paises of countries" value="{{ paises | json }}" >{{ paises | json }} </ion-select-option>
       </ion-select>
@@ -110,26 +110,38 @@
       </ion-select>
     </ion-item>
     
-    <!-- <ion-item>
+    <ion-item>
       <ion-label position="floating">Seleccionar Sección</ion-label>
       <ion-select 
           mode="ios" 
-          (ionChange)="carreras($event)" 
+          (ionChange)="sections($event)" 
           okText="Aceptar" cancelText="Cancelar" 
           placeholder="Seleccionar sección"  >
-        <ion-select-option *ngFor="let c of sectiosList" value="{{ c.section| json }}">{{ c.section| json }}</ion-select-option>
+        <ion-select-option *ngFor="let c of sectionsList" value="{{ c.section| json }}">{{ c.section| json }}</ion-select-option>
       </ion-select>
-    </ion-item> -->
+    </ion-item>
 
     <ion-item>
       <ion-label position="floating">Seleccionar Asignatura</ion-label>
       <ion-select 
           mode="ios" 
-          (ionChange)="carreras($event)" 
+          (ionChange)="asignaturas($event)" 
           okText="Aceptar" cancelText="Cancelar" 
           placeholder="Seleccionar Docente"
           >
         <ion-select-option *ngFor="let c of asignaturasList" value="{{ c.nameAsignatura | json }}" >{{ c.nameAsignatura | json }} </ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Seleccionar grupo de Alumnos</ion-label>
+      <ion-select 
+          mode="ios" 
+          (ionChange)="groupStudents($event)" 
+          okText="Aceptar" cancelText="Cancelar" 
+          placeholder="Seleccionar un grupo de Alumnos"
+          >
+        <ion-select-option *ngFor="let c of groupStudentsList" value="{{ c.nameGroup | json }}" >{{ c.nameGroup | json }} </ion-select-option>
       </ion-select>
     </ion-item>
 

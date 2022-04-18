@@ -25,25 +25,35 @@
             <table>
                 <tr>
                   <th>Nombres</th>
-                  <th>Apellidos</th>
                   <th>Documento</th>
                   <th>Email</th>
                   <th>Teléfono</th>
                   <th>País</th>
                   <th>Ciudad</th>
+                  <th>Dirección</th>
+                  <th>Fecha nacimiento</th>
+                  <th>Sexo</th>
                   <th>Carrera</th>
-                  <th>Informacion</th>
+                  <th>Sección</th>
+                  <th>Asignatura</th>
+                  <th>Grupo alumonos</th>
+                  <th>Notas</th>
                   <th>Acciones</th>
                 </tr>
                 <tr *ngFor="let s of students">
-                  <td>{{ s.name | json }}</td>
-                  <td>{{ s.lastname | json }}</td>
+                  <td>{{ s.fullName | json }}</td>
                   <td>{{ s.document | json }}</td>
                   <td>{{ s.email | json }}</td>
                   <td>{{ s.phone | json }}</td>
                   <td>{{ s.country | json }}</td>
                   <td>{{ s.city | json }}</td>
+                  <td>{{ s.address | json }}</td>
+                  <td>{{ s.dob | json }}</td>
+                  <td>{{ s.sex | json }}</td>
                   <td>{{ s.carrera | json }}</td>
+                  <td>{{ s.sectionID | json }}</td>
+                  <td>{{ s.asignatura | json }}</td>
+                  <td>{{ s.bloodgroup | json }}</td>
                   <td>{{ s.information | json }}</td>
                   <td>
                     <ion-icon color="danger" style="zoom:2" name="trash-outline" (click)="deleteStudent(s.id)"></ion-icon>
