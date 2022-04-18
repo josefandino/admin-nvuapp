@@ -89,6 +89,9 @@ const routes: Routes = [
   { path: 'school-year', loadChildren: () => import('./panel/school-year/school-year/school-year.module').then( m => m.SchoolYearPageModule) },
   { path: 'create-school-year', loadChildren: () => import('./panel/school-year/create-school-year/create-school-year.module').then( m => m.CreateSchoolYearPageModule) },
   { path: 'edit-school-year', loadChildren: () => import('./panel/school-year/edit-school-year/edit-school-year.module').then( m => m.EditSchoolYearPageModule) },
+  { path: 'group-students', loadChildren: () => import('./panel/students/group-students/group-students.module').then( m => m.GroupStudentsPageModule) },
+  { path: 'group-students-create', loadChildren: () => import('./panel/students/group-students-create/group-students-create.module').then( m => m.GroupStudentsCreatePageModule) },
+  { path: 'group-students-edit', loadChildren: () => import('./panel/students/group-students-edit/group-students-edit.module').then( m => m.GroupStudentsEditPageModule) },
   { path: '**', redirectTo: '/dashboard', pathMatch: 'full' },
 ];
 

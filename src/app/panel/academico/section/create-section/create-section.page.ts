@@ -19,7 +19,12 @@ export class CreateSectionPage implements OnInit {
 
   date = new Date().toLocaleDateString();
   hours = new Date().toLocaleTimeString();
-  fechaFull = this.date + '-' + this.hours;
+  year = new Date().getFullYear();
+  mes = new Date().getMonth();
+  dia = new Date().getDay();
+  fechaFull = new Date().toLocaleString('sv-SE');
+  fecha = new Date().toLocaleDateString('sv-SE');
+  timestamp: any = new Date().getTime();
 
   dataSection: SectionI = {
     uid: null,

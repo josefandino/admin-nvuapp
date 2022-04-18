@@ -1,9 +1,18 @@
-<app-header (click)="backButton($event)" title="Alumnos"></app-header>
+<app-header (click)="backButton($event)" title="Alumnos NVU"></app-header>
 
 <ion-content class="ion-padding">
 
     <section class="container">
+
         <div class="addBtn">
+            <div class="childAddBtn">
+              <a routerLink="/group-students" color="success">
+                <ion-icon slot="start" name="add-outline"></ion-icon>
+                Grupo Estudiantes
+              </a>
+            </div>
+        </div>
+        <div class="addBtn"  style="margin-top:4px;">
             <div class="childAddBtn">
               <a routerLink="/create-students" color="success">
                 <ion-icon slot="start" name="person-add-outline"></ion-icon>
@@ -11,7 +20,6 @@
               </a>
             </div>
         </div>
-        
 
         <div class="ctnTable">
             <table>
@@ -24,8 +32,8 @@
                   <th>País</th>
                   <th>Ciudad</th>
                   <th>Carrera</th>
-                  <th>optsContactado</th>
                   <th>Informacion</th>
+                  <th>Acciones</th>
                 </tr>
                 <tr *ngFor="let s of students">
                   <td>{{ s.name | json }}</td>
@@ -36,7 +44,6 @@
                   <td>{{ s.country | json }}</td>
                   <td>{{ s.city | json }}</td>
                   <td>{{ s.carrera | json }}</td>
-                  <td>{{ s.optsContactado | json }}</td>
                   <td>{{ s.information | json }}</td>
                   <td>
                     <ion-icon color="danger" style="zoom:2" name="trash-outline" (click)="deleteStudent(s.id)"></ion-icon>

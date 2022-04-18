@@ -4,36 +4,42 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 @Injectable({
   providedIn: 'root'
 })
-export class StudentsService {
+export class GroupStudentsService {
 
   constructor(
     private studentFire: AngularFirestore
   ) { }
 
-  async create(collection, dato) {
+  async createGroupStudent(collection, dato) {
     try {
       return await this.studentFire.collection(collection).add(dato);
     } catch (err) { alert('ERROR en : ' + JSON.stringify(err)); }
   }
 
-  async getById(collection, id) {
+  async getByIdGroupStudent(collection, id) {
     try {
       return await this.studentFire.collection(collection).doc(id).get();
     } catch (err) { alert(JSON.stringify(err)); }
   }
-  async getAll(collection) {
+  async getAllGroupStudents(collection) {
     try {
       return await this.studentFire.collection(collection).snapshotChanges();
     } catch (err) { alert(JSON.stringify(err)); }
   }
 
-  async delete(collection, id) {
+  async updateGroupStudent(collection, id, dato) {
+    try {
+      return await this.studentFire.collection(collection).doc(id).set(dato);
+    } catch (err) { alert('ERROR en: ' + JSON.stringify(err)); }
+  }
+
+  async deleteGroupStudent(collection, id) {
     try {
       return await this.studentFire.collection(collection).doc(id).delete();
     } catch (err) { alert(JSON.stringify(err)); }
   }
 
-  async edit(collection, id, newStudent) {
+  async editGroupStudent(collection, id, newStudent) {
     try {
       return await this.studentFire.collection(collection).doc(id).update(newStudent);
     } catch (err) { alert(JSON.stringify(err)); }

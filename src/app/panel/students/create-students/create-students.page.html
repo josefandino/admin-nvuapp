@@ -6,27 +6,25 @@
     <ion-title class="ion-text-center" ><small>Formulario de </small> registro</ion-title>
     <br>
 
+    <!-- {{ countries | json }}
+
+    <ul>
+      <li *ngFor="let p of countries"> {{ p | json }}</li>
+    </ul> -->
+
     <ion-item>
       <ion-label position="floating">Nombres y apellidos </ion-label>
       <ion-input 
           type="text"
-          [(ngModel)]="student.name"
+          [(ngModel)]="dataStudent.fullName"
           [maxlength]="inputLimit"></ion-input>
     </ion-item>
-
-    <!-- <ion-item>
-      <ion-label position="floating">Apellidos</ion-label>
-      <ion-input 
-          type="text"
-          [(ngModel)]="student.lastname"
-          [maxlength]="inputLimit"></ion-input>
-    </ion-item> -->
 
     <ion-item>
       <ion-label position="floating">Documento</ion-label>
       <ion-input 
           type="number"
-          [(ngModel)]="student.document"
+          [(ngModel)]="dataStudent.document"
           [maxlength]="inputLimit"></ion-input>
     </ion-item>
 
@@ -35,7 +33,7 @@
       <ion-input
           type="email"
           placeholder="Ejemplo@correo.com"
-          [(ngModel)]="student.email"          
+          [(ngModel)]="dataStudent.email"          
           [maxlength]="inputLimit"></ion-input>
     </ion-item>
 
@@ -44,16 +42,20 @@
       <ion-input 
           type="text"
           [maxlength]="inputLimit"
-          [(ngModel)]="student.phone"
+          [(ngModel)]="dataStudent.phone"
           ></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">País</ion-label>
-      <ion-input 
-          type="text"
-          [maxlength]="inputLimit"
-          [(ngModel)]="student.country"></ion-input>
+      <ion-label position="floating">Seleccionar país</ion-label>
+      <ion-select 
+          mode="ios" 
+          (ionChange)="paises($event)" 
+          okText="Aceptar" cancelText="Cancelar" 
+          placeholder="Seleccionar Docente"
+          >
+        <ion-select-option *ngFor="let paises of countries" value="{{ paises | json }}" >{{ paises | json }} </ion-select-option>
+      </ion-select>
     </ion-item>
 
     <ion-item>
@@ -61,33 +63,84 @@
       <ion-input 
           type="text"
           [maxlength]="inputLimit"
-          [(ngModel)]="student.city"></ion-input>
+          [(ngModel)]="dataStudent.city"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Carrera</ion-label>
+      <ion-label position="floating">Dirección</ion-label>
       <ion-input 
-          type="phone"  
+          type="text"
           [maxlength]="inputLimit"
-          [(ngModel)]="student.carrera"></ion-input>
+          [(ngModel)]="dataStudent.address"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">optsContactado</ion-label>
-      <ion-input 
-          type="number"
-          [(ngModel)]="student.optsContactado" 
-          [maxlength]="inputLimit"></ion-input>
+      <ion-label position="floating">Fecha Nacimiento</ion-label>
+      <ion-input
+          [placeholder]="date"
+          [(ngModel)]="dataStudent.dob"
+          type="date"
+          [max]="date"
+          min="1950-01-01"
+          ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Seleccionar Sexo</ion-label>
+      <ion-select 
+          mode="ios" 
+          (ionChange)="sexo($event)" 
+          okText="Aceptar" cancelText="Cancelar" 
+          placeholder="Seleccionar sexo"
+          >
+        <ion-select-option value="Mujer" >Mujer</ion-select-option>
+        <ion-select-option value="Hombre" >Hombre </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label position="floating">Seleccionar Carrera</ion-label>
+      <ion-select 
+          mode="ios" 
+          (ionChange)="carreras($event)" 
+          okText="Aceptar" cancelText="Cancelar" 
+          placeholder="Seleccionar una Carrera"  >
+        <ion-select-option *ngFor="let c of carrerasList" value="{{ c.nameClass | json }}">{{ c.nameClass | json }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <!-- <ion-item>
+      <ion-label position="floating">Seleccionar Sección</ion-label>
+      <ion-select 
+          mode="ios" 
+          (ionChange)="carreras($event)" 
+          okText="Aceptar" cancelText="Cancelar" 
+          placeholder="Seleccionar sección"  >
+        <ion-select-option *ngFor="let c of sectiosList" value="{{ c.section| json }}">{{ c.section| json }}</ion-select-option>
+      </ion-select>
+    </ion-item> -->
+
+    <ion-item>
+      <ion-label position="floating">Seleccionar Asignatura</ion-label>
+      <ion-select 
+          mode="ios" 
+          (ionChange)="carreras($event)" 
+          okText="Aceptar" cancelText="Cancelar" 
+          placeholder="Seleccionar Docente"
+          >
+        <ion-select-option *ngFor="let c of asignaturasList" value="{{ c.nameAsignatura | json }}" >{{ c.nameAsignatura | json }} </ion-select-option>
+      </ion-select>
     </ion-item>
 
     <div class="textArea">
       <ion-textarea
-          type="text" rows="4" cols="20"
-          [(ngModel)]="student.information"
+          type="text" rows="3" cols="20"
+          [(ngModel)]="dataStudent.information"
           (keyup)="onKey($event)"
           [maxlength]="limit"
           placeholder="Escribir la NOTA..."></ion-textarea>
-          <div class="maxleng">{{ contador }}/200</div>
+          <div class="maxleng">{{ contador }}/80</div>
     </div>
     <br>
 
