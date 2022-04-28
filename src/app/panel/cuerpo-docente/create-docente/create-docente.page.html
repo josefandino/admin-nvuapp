@@ -32,9 +32,14 @@
 
     <ion-item>
       <ion-label position="floating">País de residencia</ion-label>
-      <ion-input 
-          [maxlength]="inputLimit"
-          [(ngModel)]="dataDocente.countryOfResidence" type="text"></ion-input>
+      <ion-select 
+          mode="ios" 
+          (ionChange)="paises($event)" 
+          okText="Aceptar" cancelText="Cancelar" 
+          placeholder="Seleccionar país"
+          >
+        <ion-select-option *ngFor="let paises of countrieslist" value="{{ paises | json }}" >{{ paises | json }} </ion-select-option>
+      </ion-select>
     </ion-item>
 
     <ion-item>
@@ -72,19 +77,15 @@
           [(ngModel)]="dataDocente.dateEntry"
           type="date"
           max="2026-12-31"
-          min="2022-03-01"
+          [min]="date"
           ></ion-input>
     </ion-item>
-
-    <!-- <ion-item>
-      <ion-label position="floating">Username</ion-label>
-      <ion-input [(ngModel)]="dataDocente.usurname" type="text"></ion-input>
-    </ion-item> -->
 
     <ion-item>
       <ion-label position="floating">Email</ion-label>
       <ion-input 
           [maxlength]="inputLimit"
+          pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" 
           [(ngModel)]="dataDocente.email" type="email"></ion-input>
     </ion-item>
     
@@ -97,11 +98,18 @@
           [(ngModel)]="dataDocente.codeTeacher" ></ion-input>
     </ion-item>
 
+    
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input [(ngModel)]="dataDocente.usurname" type="text"></ion-input>
+    </ion-item>
+
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
       <ion-input 
+          type="password"
           [maxlength]="inputLimit"
-          [(ngModel)]="dataDocente.password" type="text"></ion-input>
+          [(ngModel)]="dataDocente.password" ></ion-input>
     </ion-item>
 
     <!-- <ion-item>

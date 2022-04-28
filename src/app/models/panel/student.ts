@@ -6,7 +6,7 @@ export interface StudentsI {
   phone: string;
   country: string;
   city: string;
-  information: string;
+  comentario: string;
   studentID: string;
   fullName: string;
   dob: string;
@@ -22,6 +22,7 @@ export interface StudentsI {
   registerNO: string;
   library: string;
   photo: string;
+  actividades: string;
   username: string;
   password: string;
   usertypeID: string;

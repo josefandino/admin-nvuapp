@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { CuerpoDocenteI } from 'src/app/models/cuerpo-docente';
+import { CountriesService } from 'src/app/services/countries/countries.service';
 import { InteractionService } from 'src/app/services/interaction.service';
 import { CuerpoDocenteService } from 'src/app/services/panel/docentes/cuerpo-docente.service';
 
@@ -11,32 +13,49 @@ import { CuerpoDocenteService } from 'src/app/services/panel/docentes/cuerpo-doc
 })
 export class CreateDocentePage implements OnInit {
 
-  date = new Date().toLocaleDateString();
+  date = new Date().toLocaleDateString('sv-SE');
   hours = new Date().toLocaleTimeString();
-  fechaFull = this.date + '-' + this.hours;
+  year = new Date().getFullYear();
+  mes = new Date().getMonth();
+  dia = new Date().getDay();
+  fechaFull = new Date().toLocaleString('sv-SE');
+  fecha = new Date().toLocaleDateString('sv-SE');
+  timestamp: any = new Date().getTime();
 
   dataDocente: CuerpoDocenteI = {
     uid: null,
+    teacherId: null,
     nameFull: null,
     document: null,
-    age: null,
+    dob: null,
+    sex: null,
     countryOfResidence: null,
     homeCity: null,
-    phone: null,
-    email: null,
-    password: null,
     address: null,
     designacion: null,
+    phone: null,
+    email: null,
     dateEntry: null,
     avatar: null,
     usurname: null,
     codeDocente: null,
+    password: null,
     note: null,
+    designation: null,
+    photo: null,
+    usertypeID: null,
+    create_date: this.fechaFull,
+    modify_date: this.fechaFull,
+    create_userID: this.fechaFull,
+    create_username: this.fechaFull,
+    create_usertype: this.fechaFull,
+    active: false,
     dateCreated: this.fechaFull,
-    profile: 'teacher'
+    profile: 'teacher',
   };
 
   docentesList = [];
+  countrieslist: any = [];
 
   limit = 100;
   inputLimit = 100;
@@ -45,13 +64,28 @@ export class CreateDocentePage implements OnInit {
   constructor(
     private docentesFireSvc: CuerpoDocenteService,
     private interactionSvc: InteractionService,
+    private countriesSvc: CountriesService,
     private navCtrl: NavController,
-  ) { }
+  ) {
+    this.paisesData();
+  }
 
   ngOnInit() { }
 
   backButton() { this.navCtrl.navigateBack('/dashboard'); }
-  onKey(event){ this.contador = event.target.value.length; }
+  onKey(event) { this.contador = event.target.value.length; }
+
+  paises(e: CustomEvent) {
+    const data = e.detail.value;
+    this.dataDocente.countryOfResidence = data;
+    console.log(this.dataDocente.countryOfResidence);
+  }
+
+  async paisesData() {
+    const countires = await this.countriesSvc.paises();
+    this.countrieslist = countires;
+    return;
+  }
 
   async createDocente() {
     await this.interactionSvc.presentLoading('Agregando DOCENTE...');

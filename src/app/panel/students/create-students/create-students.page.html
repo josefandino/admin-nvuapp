@@ -6,12 +6,6 @@
     <ion-title class="ion-text-center" ><small>Formulario de </small> registro</ion-title>
     <br>
 
-    <!-- {{ countries | json }}
-
-    <ul>
-      <li *ngFor="let p of countries"> {{ p | json }}</li>
-    </ul> -->
-
     <ion-item>
       <ion-label position="floating">Nombres y apellidos </ion-label>
       <ion-input 
@@ -33,7 +27,8 @@
       <ion-input
           type="email"
           placeholder="Ejemplo@correo.com"
-          [(ngModel)]="dataStudent.email"          
+          [(ngModel)]="dataStudent.email"  
+          pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"        
           [maxlength]="inputLimit"></ion-input>
     </ion-item>
 
@@ -145,16 +140,64 @@
       </ion-select>
     </ion-item>
 
+    <ion-item>
+      <ion-label position="floating">Número de registro</ion-label>
+      <ion-input 
+          type="text"
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataStudent.registerNO"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">ROL</ion-label>
+      <ion-input 
+          type="text"
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataStudent.roll"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Foto</ion-label>
+      <ion-input 
+          type="file"
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataStudent.photo"></ion-input>
+    </ion-item>
+
     <div class="textArea">
       <ion-textarea
           type="text" rows="3" cols="20"
-          [(ngModel)]="dataStudent.information"
+          [(ngModel)]="dataStudent.actividades"
           (keyup)="onKey($event)"
           [maxlength]="limit"
-          placeholder="Escribir la NOTA..."></ion-textarea>
+          placeholder="Actividades extra curriculares..."></ion-textarea>
           <div class="maxleng">{{ contador }}/80</div>
     </div>
-    <br>
+    <div class="textArea">
+      <ion-textarea
+          type="text" rows="3" cols="20"
+          [(ngModel)]="dataStudent.comentario"
+          (keyup)="onKey($event)"
+          [maxlength]="limit"
+          placeholder="Comentario..."></ion-textarea>
+          <div class="maxleng">{{ contador }}/80</div>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Nombre de usuario</ion-label>
+      <ion-input 
+          type="text"
+          [maxlength]="30"
+          [(ngModel)]="dataStudent.username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input 
+          type="password"
+          [maxlength]="inputLimit"
+          [(ngModel)]="dataStudent.password"></ion-input>
+    </ion-item>
 
     <ion-button  color="primary" expand="block" (click)="createStudent()">
       Agregar estudiante

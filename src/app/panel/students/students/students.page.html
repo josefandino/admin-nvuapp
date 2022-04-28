@@ -37,7 +37,11 @@
                   <th>Sección</th>
                   <th>Asignatura</th>
                   <th>Grupo alumonos</th>
-                  <th>Notas</th>
+                  <th>Registro No.</th>
+                  <th>ROL</th>
+                  <th>Username</th>
+                  <th>Actividades</th>
+                  <th>Comentario</th>
                   <th>Acciones</th>
                 </tr>
                 <tr *ngFor="let s of students">
@@ -54,7 +58,11 @@
                   <td>{{ s.sectionID | json }}</td>
                   <td>{{ s.asignatura | json }}</td>
                   <td>{{ s.bloodgroup | json }}</td>
-                  <td>{{ s.information | json }}</td>
+                  <td>{{ s.registerNO | json }}</td>
+                  <td>{{ s.roll | json }}</td>
+                  <td>{{ s.username| json }}</td>
+                  <td>{{ s.actividades | json }}</td>
+                  <td>{{ s.comentario | json }}</td>
                   <td>
                     <ion-icon color="danger" style="zoom:2" name="trash-outline" (click)="deleteStudent(s.id)"></ion-icon>
                   </td>

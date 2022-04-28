@@ -22,9 +22,7 @@ export class DashboardPage implements OnInit {
     private menuSvc: MenuService,
     private navCtrl: NavController,
     private auth: AuthService,
-  ) {
-    // this.getAllProfile();
-  }
+  ) {  }
 
   ngOnInit() {
     this.menuPrincipal();
@@ -32,7 +30,6 @@ export class DashboardPage implements OnInit {
 
   menuPrincipal() {
     this.menuSvc.getMenu().subscribe(data => {
-      // console.log('this.menuVAL', data);
       this.menuVAL = data;
     });
   }
@@ -45,14 +42,5 @@ export class DashboardPage implements OnInit {
       }, 1200);
     });
   }
-
-  // getAllProfile() {
-  //   this.profile.getDataUrl().subscribe(async data => {
-  //     console.log('Data', data);
-  //     await this.iterationCvc.presentLoading('Cargando...');
-  //     await this.iterationCvc.closeLoading();
-  //     this.personProfile = data;
-  //   });
-  // }
 
 }

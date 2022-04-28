@@ -23,7 +23,7 @@ export class HeaderPanelComponent implements OnInit {
 
   constructor(
     private menuCtrl: MenuController
-  ) { console.log('hh', this.hours);}
+  ) { }
 
   ngOnInit() { }
 
