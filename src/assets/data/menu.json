@@ -15,8 +15,99 @@
     "redirectTo": "/academico"
   },
   {
+    "icon": "bookmarks-outline",
+    "name": "Gestion académica",
+    "redirectTo": "/gestion-adademica"
+  },
+  {
+    "icon": "bookmarks-outline",
+    "name": "Admision",
+    "redirectTo": "/panel-admision"
+  },
+  {
+    "icon": "bookmarks-outline",
+    "name": "Gestion y cumplimiento de pólizas",
+    "redirectTo": "/gestion-cumplimiento-polizas"
+  },
+  {
+    "icon": "bookmarks-outline",
+    "name": "Carreras",
+    "redirectTo": "/carreras"
+  },
+  {
+    "icon": "bag-check-outline",
+    "name": "Cursos",
+    "redirectTo": "/courses"
+  },
+  {
+    "icon": "albums-outline",
+    "name": "Registro universitario",
+    "redirectTo": "/registro-universitario"
+  },
+  {
+    "icon": "walk-outline",
+    "name": "Recursos humanos",
+    "redirectTo": "/recursos-humanos"
+  },
+  { 
+    "icon": "cash-outline",
+    "name": "Finanzas y contabilidad",
+    "redirectTo": "/finanzas-contabilidad"
+  },
+  { 
+    "icon": "cash-outline",
+    "name": "Vice rectoría académica",
+    "redirectTo": "/vice-rectoria-academica"
+  },
+  { 
+    "icon": "cash-outline",
+    "name": "Vice rectoría administrativa",
+    "redirectTo": "/vice-rectoria-administrativa"
+  },  
+  { 
+    "icon": "cash-outline",
+    "name": "Vice resctoría post grado e investigación",
+    "redirectTo": "/vice-rectoria-post-grado-investigacion"
+  },
+  { 
     "icon": "calendar-outline",
-    "name": "Año Académico",
-    "redirectTo": "/school-year"
+    "name": "Calendario, entrenamientos/ diplomados/ talleres",
+    "redirectTo": "/calendario-entretenimiento"
+  },
+  { 
+    "icon": "people-circle-outline",
+    "name": "Asociación de alumnos",
+    "redirectTo": "/asociacion-alumons"
+  },
+  
+  
+
+
+
+
+
+
+  
+  
+  {
+    "icon": "library-outline",
+    "name": "Biblioteca",
+    "redirectTo": "/biblioteca"
+  },
+  {
+    "icon": "albums-outline",
+    "name": "Noticias",
+    "redirectTo": "/news"
+  },
+  {
+    "icon": "build-outline",
+    "name": "Herramientas",
+    "redirectTo": "/herramientas"
+  },
+
+  {
+    "icon": "grid-outline",
+    "name": "Panel",
+    "redirectTo": "/dashboard"
   }
 ]
